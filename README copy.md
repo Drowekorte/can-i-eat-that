@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Custom CMS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this activity we will create a CMS (Content Management System) that allows users to upload blog posts. Users will also be able to view blog posts by other authors and filter them based on category. We will use the Context API to manage the application state globally, adhering to a design pattern that closely follows Redux. Although very complex applications may have several stores, we are going to keep it simple and store all stateful data in a single global store.
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+* Open the [Unsolved](Unsolved) folder and install dependencies by running `npm install` at the project root.
 
-### `npm start`
+* Open another tab in your terminal and run `mongod`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Start the app by running `npm start` from the project root.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Once the app starts open your browser to [localhost:3000](http://localhost:3000).
 
-### `npm test`
+* Open [App.js](Unsolved/client/src/App.js).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* There are 4 main sections in this application:
 
-### `npm run build`
+  * A section that allows you to create new posts.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * A section that lists all of the posts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  * A detail page to view the contents of an individual post.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  * (BONUS): A Favorites page that lists all of your favorite posts.
 
-### `npm run eject`
+### Part 1
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Set up a store for your application with support for the following actions:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  1. UPDATE_POSTS: Updates the state with the latest posts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  2. ADD_POST: Adds a post to the posts array.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  3. REMOVE_POST: Removes a specified post from your posts array.
 
-## Learn More
+  4. SET_CURRENT_POST: Sets the current post in the store. This action will only be dispatched from the detail page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  5. LOADING: Indicates when the app is saving a post or retrieving posts from the database.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Since this application is larger than our previous applications, we are going to create a separate file for our action types. By doing this, we will be able to import the actions into any component we would like, thus reducing the chance of mispelling them thanks to the autocomplete feature in our IDE.
 
-### Code Splitting
+* In `client/src/utils`, create a file named `actions.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Inside the actions file, export a `const` for each action type so that you will be able to easily import it into whichever file you would like.
 
-### Analyzing the Bundle Size
+  * Ex: `export const GET_POSTS = "GET_POSTS";`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* In `client/src/utils/GlobalState.js`, create a store for your application with with a reducer that can handle each action type.
 
-### Making a Progressive Web App
+* Export a `StoreProvider` and `useStoreContext` Hook.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* In `App.js`, wrap your entire application with the `StoreProvider`.
 
-### Advanced Configuration
+### Part 2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Open up `client/src/components/CreatePostForm` and add the functionality for creating new posts.  
 
-### Deployment
+* Open up `client/src/components/PostsList` and add the functionality for getting the latest posts _and_ deleting a single post.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Open up `client/src/pages/Detail.js` and add the functionality for viewing a selected post.
 
-### `npm run build` fails to minify
+* 📝 With every API call, dispatch the `LOADING` action. Then make the API call. Dispatch your action within the `then` method.
+ 
+*  Update the `UPDATE_POSTS`, `SET_CURRENT_POST`, and `ADD_POST` action handlers so that the `loading` property on the state changes to `false`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* In `client/src/components/Nav`, use the global store to make the `Loading...` text appear whenever the global state is loading.
+
+* In `client/src/components/CreatePostForm`, update the submit button so that it is `disabled` if the global state is loading.
+
+### BONUS
+
+* In `client/src/pages/Detail.js`, add a `❤️ Add to Favorites` button that adds the blog post to a `favorites` array in the store.
+
+* Here are some actions you might choose to use:
+
+  1. UPDATE_FAVORITES: Updates the state with the latest favorites.
+
+  2. ADD_FAVORITE: Adds a favorite to the favorites array.
+
+  3. REMOVE_FAVORITE: Removes a specified post from your favorites list.
+
+### Hints
+
+* You will **not** have to modify any files that are not in the `client` folder.
+
+* If you are stuck or running into errors, try to `console.log` the `action` in your store. Try to make sure that the reducer is functioning as expected before looking at your component.
+
+* Use the `utils/GlobalState.js` file from the previous activity to help scaffold the store.
+
+* Ask the instructor or a TA if you're having difficulty understanding any of the activity requirements.
