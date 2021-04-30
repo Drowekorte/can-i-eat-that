@@ -54,7 +54,7 @@ const Detail = props => {
             </button>
           ) : (
             <button className="btn" onClick={addFavorite}>
-                ❤️ Add to Favorites
+                <span role="img" aria-label="heart" >❤️</span> Add to Favorites
             </button>
           )}
         </Row>
