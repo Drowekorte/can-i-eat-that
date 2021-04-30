@@ -1,29 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Login() {
+async function 
+
+export default function Login({ setToken }) {
+    const [username, setUserName] = useState();
+    const [password, setPassword] = useState();
     return (
+        <div className="login-wrapper">
+      <h1>Please Log In</h1>
+      <form>
+        <label>
+          <p>Username</p>
+          <input type="text" onChange={e => setUserName(e.target.value)}/>
+        </label>
+        <label>
+          <p>Password</p>
+          <input type="password" onChange={e => setPassword(e.target.value)}/>
+        </label>
         <div>
-            <h1>Please Log In</h1>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-    </Form.Text>
-                </Form.Group>
-
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-  </Button>
-            </Form>
+          <button type="submit">Submit</button>
         </div>
+      </form>
+    </div>
     )
 }
+
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+  }
