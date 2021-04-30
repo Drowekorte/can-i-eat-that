@@ -12,7 +12,9 @@
 
 ## Description
  
-Can I Eat That? is an PWA designed for those who struggle to find the  . It allows single users or bands to sign-up, browse, search, post an opening, and reply to prospective members. The option to search categories allows a user to see results that match their specific criteria. Users/bands can create a profile which can be viewed by other users. Users/bands can post looking for other users/bands.
+Can I Eat That? is an PWA designed for those who struggle to find recipes that they can make with food allergies. Can I Eat That? Is a
+site where people with food allergies can go to help them search for recipes that they can make with a certain food allergy. You are
+given options to select from that will help narrow down your searches. Can I Eat That? is also for user that are on diets and users that are trying to eat health. There are options for users to select that will help them find recipes to go with all types of diets and healthy eating.
   
 ## License
  
@@ -54,15 +56,13 @@ WHEN I click on one of my favorite recipes it will take me to that recipe  <br /
 THEN I am able to delete any of my favorite recipes I no longer want  <br />
 WHEN I click on the logout option in the navigation  <br />
 THEN I am signed out of the site  <br />
-WHEN I am idle on the page for more than a set time  <br />
-THEN I am automatically signed out of the site  <br />
+
  
 
   
 ## Technology Used
  
 JavaScript
-Handlebars
 Node.js 
 Express.js
 Sequelize 
