@@ -25,33 +25,33 @@ Can I Eat That? is an PWA designed for those who struggle to find the  . It allo
  
 ## User Story
 
->GIVEN a CMS-style music classifieds site  <br />
+>GIVEN a PWA-style food search site  <br />
 WHEN I visit the site for the first time  <br />
-THEN I am presented with the homepage, which includes two talent ISO talent buttons and a “Sign-up banner”, all leading me to a signup/signin page to access the database.  <br />
+THEN I am presented with the homepage, which includes two talent ISO talent buttons and a “Sign-up banner”  <br />
 THEN I am prompted to either sign up or sign in  <br />
 WHEN I choose to sign up  <br />
-THEN I am prompted to create a username and password  <br />
+THEN I am prompted to create a username and password and enter my Name and Email <br />
 WHEN I click on the sign-up button  <br />
 THEN my user credentials are saved and I am logged into the site  <br />
 THEN I can create a profile  <br />
 WHEN I revisit the site at a later time and choose to sign in  <br />
 THEN I am prompted to enter my username and password  <br />
 WHEN I am signed in to the site  <br />
-THEN I see navigation links for the homepage, the dashboard, and the option to log out  <br />
-WHEN I click on the homepage option  <br />
-THEN I am taken to the homepage  <br />
-WHEN I click on any other links in the navigation I am redirected to that page  <br />
-THEN I am presented with the position post title, contents, post creator’s username, and date created for that post and have the option to leave a comment  <br />
-WHEN I enter a comment and click on the submit button while signed in  <br />
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created  <br />
-WHEN I click on the dashboard option in the navigation  <br />
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new classifieds post  <br />
-WHEN I click on the button to add a new blog post  <br />
-THEN I am prompted to enter both a title and contents for my posting  <br />
-WHEN I click on the button to create a new posting  <br />
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post  <br />
-WHEN I click on one of my existing posts in the dashboard  <br />
-THEN I am able to delete or update my post and taken back to an updated dashboard  <br />
+THEN I see navigation links for the search page, my profile, and the option to log out  <br />
+WHEN I click on the search option  <br />
+THEN I am taken to the search page  <br />
+WHEN I am on the search page I am given three options. Keyword, Health and Diet  <br />
+THEN I can drop down one of the three options and it will help narrow down my search  <br />
+WHEN I am finished going through the options for my search I can click the Search button  <br />
+THEN I am taken to the Search Resualts page where I can see all the recipes for my search<br />
+WHEN I am on the seatch resualts page I can click on a heart to add it to my favorites  <br />
+THEN I can click New Search or Profile  <br />
+WHEN I click on New Search I am taken back to the search page  <br />
+THEN I am able to go through the drop downs and start a new search  <br />
+WHEN I click on the Profile button  <br />
+THEN I am taken to my profile where it will show all my favorite recipes  <br />
+WHEN I click on one of my favorite recipes it will take me to that recipe  <br />
+THEN I am able to delete any of my favorite recipes I no longer want  <br />
 WHEN I click on the logout option in the navigation  <br />
 THEN I am signed out of the site  <br />
 WHEN I am idle on the page for more than a set time  <br />
