@@ -1,6 +1,9 @@
+import React, { Component } from "react";
 import axios from "axios";
-const BASEURL = "https://www.omdbapi.com/?t=";
-const APIKEY = "&apikey=trilogy";
+const BASEURL = "https://api.edamam.com/search?";
+const APIKEY = "f0da9fcc6e4a8e55ebb56b3d79fe2804";
+
+
 
 
 export default {
