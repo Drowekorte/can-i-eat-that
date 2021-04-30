@@ -22,7 +22,7 @@ const fetchRecipes = async (...ingredients) => {
   const res = await axios.get(url);
   const recipes = res.data;
   console.log(recipes);
-  addToList(recipes)
+  addToList(recipes);
 };
 
 fetchRecipes("zucchini", "broccoli", "carrots");
