@@ -5,7 +5,7 @@ const APIKEY = `&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}`;
 const APIID = `&app_id=${process.env.EDAMAM_API_ID}`;
 
 const maxTime = "&time=30";
-const maxIngreds = `&ingr=10`;
+const maxIngreds = "&ingr=10";
 
 const fetchRecipes = async (...ingredients) => {
   const mappedIngreds = ingredients
