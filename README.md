@@ -12,7 +12,9 @@
 
 ## Description
  
-Can I Eat That? is an PWA designed for those who struggle to find the  . It allows single users or bands to sign-up, browse, search, post an opening, and reply to prospective members. The option to search categories allows a user to see results that match their specific criteria. Users/bands can create a profile which can be viewed by other users. Users/bands can post looking for other users/bands.
+Can I Eat That? is an PWA designed for those who struggle to find recipes that they can make with food allergies. Can I Eat That? Is a
+site where people with food allergies can go to help them search for recipes that they can make with a certain food allergy. You are
+given options to select from that will help narrow down your searches. Can I Eat That? is also for user that are on diets and users that are trying to eat health. There are options for users to select that will help them find recipes to go with all types of diets and healthy eating.
   
 ## License
  
@@ -20,49 +22,47 @@ Can I Eat That? is an PWA designed for those who struggle to find the  . It allo
   
 ## Links
  
-* [Github Repository](https://github.com/Danomiterock/Build-a-Band/) 
-* [Heroku App](https://build-a-band-meet-make-music.herokuapp.com/)
+* [Github Repository](https://github.com/Drowekorte/can-i-eat-that) 
+* [Heroku App]()
  
 ## User Story
 
->GIVEN a CMS-style music classifieds site  <br />
+>GIVEN a PWA-style food search site  <br />
 WHEN I visit the site for the first time  <br />
-THEN I am presented with the homepage, which includes two talent ISO talent buttons and a “Sign-up banner”, all leading me to a signup/signin page to access the database.  <br />
+THEN I am presented with the homepage, which includes a place for you to fill in your login information and a “Sign-up banner”  <br />
 THEN I am prompted to either sign up or sign in  <br />
 WHEN I choose to sign up  <br />
-THEN I am prompted to create a username and password  <br />
+THEN I am prompted to create a username, password and enter your Name and Email <br />
 WHEN I click on the sign-up button  <br />
 THEN my user credentials are saved and I am logged into the site  <br />
 THEN I can create a profile  <br />
-WHEN I revisit the site at a later time and choose to sign in  <br />
-THEN I am prompted to enter my username and password  <br />
+WHEN I revisit the site at a later time I will be able to login  <br />
+THEN I enter my username and password  <br />
 WHEN I am signed in to the site  <br />
-THEN I see navigation links for the homepage, the dashboard, and the option to log out  <br />
-WHEN I click on the homepage option  <br />
-THEN I am taken to the homepage  <br />
-WHEN I click on any other links in the navigation I am redirected to that page  <br />
-THEN I am presented with the position post title, contents, post creator’s username, and date created for that post and have the option to leave a comment  <br />
-WHEN I enter a comment and click on the submit button while signed in  <br />
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created  <br />
-WHEN I click on the dashboard option in the navigation  <br />
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new classifieds post  <br />
-WHEN I click on the button to add a new blog post  <br />
-THEN I am prompted to enter both a title and contents for my posting  <br />
-WHEN I click on the button to create a new posting  <br />
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post  <br />
-WHEN I click on one of my existing posts in the dashboard  <br />
-THEN I am able to delete or update my post and taken back to an updated dashboard  <br />
-WHEN I click on the logout option in the navigation  <br />
+THEN I see navigation links for the search page, my profile, and the option to log out  <br />
+WHEN I click on the search option  <br />
+THEN I am taken to the search page  <br />
+WHEN I am on the search page I am given three options. Keyword, Health and Diet  <br />
+THEN I can drop down one of the three options and it will help narrow down my search  <br />
+WHEN I am finished going through the options for my search I can click the Search button  <br />
+THEN I am taken to the Search Results page where I can see all the recipes for my search <br />
+WHEN I am on the seatch results page I can click on a heart to add it to my favorites  <br />
+THEN I can click New Search or Profile  <br />
+WHEN I click on New Search I am taken back to the search page  <br />
+THEN I am able to go through the drop downs and start a new search  <br />
+WHEN I click on the Profile button  <br />
+THEN I am taken to my profile where it will show all my favorite recipes  <br />
+WHEN I click on one of my favorite recipes it will take me to that recipe  <br />
+THEN I am able to delete any of my favorite recipes I no longer want  <br />
+WHEN I click on the logout option in the navigation bar <br />
 THEN I am signed out of the site  <br />
-WHEN I am idle on the page for more than a set time  <br />
-THEN I am automatically signed out of the site  <br />
+
  
 
   
 ## Technology Used
  
 JavaScript
-Handlebars
 Node.js 
 Express.js
 Sequelize 
@@ -75,20 +75,29 @@ Bulma
   
 ## Mockups and Screenshots
 ### Wireframes
-![Home Page](./Wireframe/1-HomePage(home).png)
+![Home Page](Wireframe/Login.png)
 Home Page - First view before sign in
 
-![Sign In Page](./Wireframe/2-SignIn(login-signup).png)
-Sign In Page - Username and Password
+![Register Page](Wireframe/Register.png)
+Register Page - Username, Password, Your Name and Email
 
-![Search Page](./Wireframe/3-Search(build-a-band).png)
+![Search Page](Wireframe/Search.png)
 Search Page - First page after login
 
-![My Profile Page](./Wireframe/4-MyProfile(dashboard).png)
+![Keyword Drop Down](Wireframe/Keyword.png)
+Keyword Drop Down - What youll see when you drop down Keyword search
+
+![Health Drop Down](Wireframe/Health.png)
+Health Drop Down - What youll see when you drop down Health search
+
+![Diet Drop Down](Wireframe/Diet.png)
+Diet Drop Down - What youll see when you drop down Diet search
+
+![My Profile Page](Wireframe/Profile.png)
 Profile Page - Personal Profile
 
-![Band Profile Page](./Wireframe/5-BandPage(dashboard).png)
-Band Profile Page - Band Page and Profiles of Members
+![Results Page](Wireframe/Results.png)
+Results Page - Results from your search
 
   
 ## Questions
@@ -100,19 +109,14 @@ Email: emacartoon@gmail.com
 GitHub: [@EmaCartoon](https://github.com/EmaCartoon)
 
 
-Email: danomiterock@gmail.com
-<br>
-GitHub: [@Danomiterock](https://github.com/Danomiterock)
-
-
-Email: nooromar305@gmail.com
-<br>
-Github: [@NoorA1125](https://github.com/NoorA1125)
-
-
 Email: drowekorte@gmail.com
 <br>
 Github: [@drowekorte](https://github.com/Drowekorte)
+
+
+Email: mark.reifke@gmail.com
+<br>
+GitHub: [@MarkReifke](https://github.com/MarkReifke)
 
  
 ## Credits
