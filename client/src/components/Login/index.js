@@ -3,7 +3,7 @@ import React from 'react';
 export default function Login() {
     return (
         <div>
-            <h1> Please login</h1>
+            <h1>Please Log In</h1>
             <Form>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
