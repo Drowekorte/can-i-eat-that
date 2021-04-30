@@ -1,6 +1,6 @@
 module.exports = {
     mode: "development",
-    entry: "./recipes.js",
+    entry: "./API.js",
     output: {
       path: __dirname,
       filename: "bundle.js"
