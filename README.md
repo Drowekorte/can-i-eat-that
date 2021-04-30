@@ -20,8 +20,8 @@ Can I Eat That? is an PWA designed for those who struggle to find the  . It allo
   
 ## Links
  
-* [Github Repository](https://github.com/Danomiterock/Build-a-Band/) 
-* [Heroku App](https://build-a-band-meet-make-music.herokuapp.com/)
+* [Github Repository](https://github.com/Drowekorte/can-i-eat-that) 
+* [Heroku App]()
  
 ## User Story
 
@@ -75,20 +75,29 @@ Bulma
   
 ## Mockups and Screenshots
 ### Wireframes
-![Home Page](./Wireframe/1-HomePage(home).png)
+![Home Page](Wireframe/Login.png)
 Home Page - First view before sign in
 
-![Sign In Page](./Wireframe/2-SignIn(login-signup).png)
-Sign In Page - Username and Password
+![Register Page](Wireframe/Register.png)
+Register Page - Username, Password, Your Name and Email
 
-![Search Page](./Wireframe/3-Search(build-a-band).png)
+![Search Page](Wireframe/Search.png)
 Search Page - First page after login
 
-![My Profile Page](./Wireframe/4-MyProfile(dashboard).png)
+![Keyword Drop Down](Wireframe/Keyword.png)
+Keyword Drop Down - What youll see when you drop down Keyword search
+
+![Health Drop Down](Wireframe/Health.png)
+Health Drop Down - What youll see when you drop down Health search
+
+![Diet Drop Down](Wireframe/Diet.png)
+Diet Drop Down - What youll see when you drop down Diet search
+
+![My Profile Page](Wireframe/Profile.png)
 Profile Page - Personal Profile
 
-![Band Profile Page](./Wireframe/5-BandPage(dashboard).png)
-Band Profile Page - Band Page and Profiles of Members
+![Results Page](Wireframe/Results.png)
+Results Page - Results from your search
 
   
 ## Questions
@@ -100,19 +109,14 @@ Email: emacartoon@gmail.com
 GitHub: [@EmaCartoon](https://github.com/EmaCartoon)
 
 
-Email: danomiterock@gmail.com
-<br>
-GitHub: [@Danomiterock](https://github.com/Danomiterock)
-
-
-Email: nooromar305@gmail.com
-<br>
-Github: [@NoorA1125](https://github.com/NoorA1125)
-
-
 Email: drowekorte@gmail.com
 <br>
 Github: [@drowekorte](https://github.com/Drowekorte)
+
+
+Email: mark.reifke@gmail.com
+<br>
+GitHub: [@MarkReifke](https://github.com/MarkReifke)
 
  
 ## Credits
