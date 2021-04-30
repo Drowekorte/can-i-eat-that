@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 const APIURL = "https://api.edamam.com/search?q=";
-const APIKEY = "&app_key="{process.env.REACT_APP_EDAMAM_API_KEY};
-const APIID = "&app_id="{process.env.EDAMAM_API_ID};
+const APIKEY = `&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}`;
+const APIID = `&app_id=${process.env.EDAMAM_API_ID}`;
 
 const maxTime = "&time=30";
-const maxIngreds = `&ingr=10`;
+const maxIngreds = "&ingr=10";
 
 const fetchRecipes = async (...ingredients) => {
   const mappedIngreds = ingredients
@@ -32,8 +32,8 @@ class ApiApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
-      isLoaded: false,
+      items: [],
+      isLoaded: false
     }
   }
 
@@ -70,7 +70,7 @@ class ApiApp extends Component {
     }
     }
   }
-}
+
 
 
 
