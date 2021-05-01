@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import { Redirect } from 'react-router'
+
 import PropTypes from 'prop-types';
 
 async function signupUser(credentials) {
@@ -34,7 +36,9 @@ export default function Signup({ setToken }) {
                 password
             }
         );
+
         // setToken(token);
+
         setRedirect(true);
     }
 
