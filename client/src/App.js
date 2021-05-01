@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState , useEffect } from "react";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
@@ -14,22 +15,41 @@ import useToken from "./useToken";
 
 
 function App() {
-  const {token, setToken} = useToken();
 
+const [name, setName] = useState();
+  useEffect(() => {
+    (
+      async () => {
+       const response = await fetch("http://localhost:3000/api/user", {
+          headers: { "Content-type": "application/json" },
+          credentials: "include",
+        });
+
+        const content = await response.json();
+
+        setName(content.name);
+      }
+  )();
+});
+
+const {token, setToken} = useToken();
   if (!token) {
     return <Login setToken={setToken} />
-  }
+  } 
+
+
 
   return (
     <Router>
       <div>
         <StoreProvider>
-          <Nav />
+          <Nav  name={name}/>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/login" component={() => <Login setName={setName}/>} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/preferences" component={Preferences} />
             <Route exact path="/posts/:id" component={Detail} />

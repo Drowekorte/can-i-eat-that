@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 async function signupUser(credentials) {
@@ -10,8 +11,9 @@ async function signupUser(credentials) {
         body: JSON.stringify(credentials)
     })
         .then(data => data.json())
-       
+
 }
+
 
 
 export default function Signup({ setToken }) {
@@ -19,21 +21,25 @@ export default function Signup({ setToken }) {
     const [email, setUserEmail] = useState();
     const [username, setUserUsername] = useState();
     const [password, setPassword] = useState();
+    const [redirect, setRedirect] = useState(false);
 
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await signupUser(
-         {
-            name,
-            email,
-            username,
-            password
-        }
+            {
+                name,
+                email,
+                username,
+                password
+            }
         );
         setToken(token);
+        setRedirect(true);
     }
 
-    
+    if (redirect) {
+        return <Redirect to="/login" />;
+    }
 
     return (
         <div className="login-wrapper">
