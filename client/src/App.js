@@ -9,6 +9,7 @@ import FavoritesList from "./pages/FavoritesList";
 import Dashboard from './components/Dashboard';
 import Preferences from "./components/Preferences";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
 import useToken from "./useToken";
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/signup" component={Signup} />
             <Route exact path="/preferences" component={Preferences} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
