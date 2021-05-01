@@ -22,12 +22,7 @@ const fetchRecipes = async (...ingredients) => {
   const res = await axios.get(url);
   const recipes = res.data;
   console.log(recipes);
-
-  // This is a function that needs to be fixed 
-  function addToList() {
-
-  }
-  addToList(recipes);
+  // addToList(recipes);
 };
 
 fetchRecipes("zucchini", "broccoli", "carrots");
@@ -75,6 +70,8 @@ class ApiApp extends Component {
     }
     }
   }
+
+  export { ApiApp };
 
 
 
