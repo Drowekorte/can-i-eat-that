@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router'
 import PropTypes from 'prop-types';
 
 async function signupUser(credentials) {
@@ -8,6 +8,7 @@ async function signupUser(credentials) {
         headers: {
             "Content-type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify(credentials)
     })
         .then(data => data.json())
@@ -33,7 +34,7 @@ export default function Signup({ setToken }) {
                 password
             }
         );
-        setToken(token);
+        // setToken(token);
         setRedirect(true);
     }
 
