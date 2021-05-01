@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-async function loginUser(credentials) {
-    return fetch("http://localhost:3000/login", {
+async function signupUser(credentials) {
+    return fetch("http://localhost:3000/signup", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -10,31 +10,52 @@ async function loginUser(credentials) {
         body: JSON.stringify(credentials)
     })
         .then(data => data.json())
+       
 }
 
-export default function Login({ setToken }) {
+
+export default function Signup({ setToken }) {
+    const [name, setUserName] = useState();
+    const [email, setUserEmail] = useState();
     const [username, setUserUsername] = useState();
     const [password, setPassword] = useState();
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const token = await loginUser({
+        const token = await signupUser(
+         {
+            name,
+            email,
             username,
             password
-        });
+        }
+        );
         setToken(token);
     }
+
+    
+
     return (
         <div className="login-wrapper">
-            <h1>Please Log In</h1>
+            <h1>Please Signup</h1>
             <form onSubmit={handleSubmit}>
+                <label>
+                    <p>Name</p>
+                    <input type="text" onChange={e => setUserName(e.target.value)} />
+                </label>
+                <label>
+                    <p>email</p>
+                    <input type="text" onChange={e => setUserEmail(e.target.value)} />
+                </label>
+
                 <label>
                     <p>Username</p>
                     <input type="text" onChange={e => setUserUsername(e.target.value)} />
                 </label>
+
                 <label>
                     <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
+                    <input type="current-password" onChange={e => setPassword(e.target.value)} />
                 </label>
                 <div>
                     <button type="submit">Submit</button>
@@ -44,6 +65,6 @@ export default function Login({ setToken }) {
     )
 }
 
-Login.propTypes = {
+signupUser.propTypes = {
     setToken: PropTypes.func.isRequired
 }
