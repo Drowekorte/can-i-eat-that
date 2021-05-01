@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 async function loginUser(credentials) {
     return fetch("http://localhost:3000/login", {
         method: "POST",
-        headers: {"Content-type": "application/json"},
+
+        headers: { "Content-type": "application/json" },
+
         credentials: "include",
         body: JSON.stringify(credentials)
     })
@@ -16,21 +18,24 @@ async function loginUser(credentials) {
 export default function Login({ setToken }) {
     const [username, setUserUsername] = useState();
     const [password, setPassword] = useState();
+    const [redirect, setRedirect] = useState(false);
 
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await loginUser({
             username,
             password
-        });
-        setToken(token);
-        
+        }
+        );
+        // setToken(token);
+        setRedirect(true);
+
     }
-    
-    // setRedirect(true);
-    // if (redirect) {
-    //     return <Redirect to="/home" />;
-    // }
+
+    if (redirect) {
+        return <Redirect to="/home" />;
+    }
+
 
     return (
         <div className="login-wrapper">
@@ -45,8 +50,10 @@ export default function Login({ setToken }) {
                     <input type="password" onChange={e => setPassword(e.target.value)} />
                 </label>
                 <div>
-                    <button type="submit" onClick={this.setRedirect}>
-                        {this.state.redirect} && <Redirect to="/login" />Submit</button>
+
+                    <button type="submit">
+                        Submit</button>
+
                 </div>
             </form>
         </div>

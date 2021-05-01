@@ -20,10 +20,12 @@ const [name, setName] = useState();
   useEffect(() => {
     (
       async () => {
-       const response = await fetch("http://localhost:3000/api/user", {
-          headers: { "Content-type": "application/json" },
-          credentials: "include",
-        });
+
+        
+       const response = await fetch("http://localhost:3000/home", {
+          headers: { "Content-type": "application/json",
+          "Accept": "application/json"
+         },
 
         const content = await response.json();
 
