@@ -26,6 +26,8 @@ const [name, setName] = useState();
           headers: { "Content-type": "application/json",
           "Accept": "application/json"
          },
+          credentials: "include",
+        });
 
         const content = await response.json();
 
