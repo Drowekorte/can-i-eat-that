@@ -46,7 +46,7 @@ export default function Login({ setToken }) {
                 </label>
                 <div>
                     <button type="submit" onClick={this.setRedirect}>
-                        {this.state.redirect} && <Redirect to="/login" />Submit</button>
+                        Submit</button>
                 </div>
             </form>
         </div>
