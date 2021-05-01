@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
+
 
 async function loginUser(credentials) {
     return fetch("http://localhost:3000/login", {
         method: "POST",
-        headers: {
-            "Content-type": "application/json"
-        },
+        headers: {"Content-type": "application/json"},
+        credentials: "include",
         body: JSON.stringify(credentials)
     })
         .then(data => data.json())
@@ -23,7 +24,14 @@ export default function Login({ setToken }) {
             password
         });
         setToken(token);
+        
     }
+    
+    // setRedirect(true);
+    // if (redirect) {
+    //     return <Redirect to="/home" />;
+    // }
+
     return (
         <div className="login-wrapper">
             <h1>Please Log In</h1>
@@ -37,7 +45,8 @@ export default function Login({ setToken }) {
                     <input type="password" onChange={e => setPassword(e.target.value)} />
                 </label>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" onClick={this.setRedirect}>
+                        {this.state.redirect} && <Redirect to="/login" />Submit</button>
                 </div>
             </form>
         </div>
