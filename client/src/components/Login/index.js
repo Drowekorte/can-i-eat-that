@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 
 
 async function loginUser(credentials) {
-    return fetch("http://localhost:3000/login", {
+    return fetch("/api/login", {
         method: "POST",
-
         headers: { "Content-type": "application/json" },
-
         credentials: "include",
         body: JSON.stringify(credentials)
     })
@@ -27,7 +25,7 @@ export default function Login({ setToken }) {
             password
         }
         );
-        // setToken(token);
+        setToken(token);
         setRedirect(true);
 
     }
