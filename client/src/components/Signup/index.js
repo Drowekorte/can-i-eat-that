@@ -5,7 +5,7 @@ import { Redirect } from 'react-router'
 import PropTypes from 'prop-types';
 
 async function signupUser(credentials) {
-    return fetch("/api/signup", {
+    return fetch("/api/user/signup", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -37,7 +37,7 @@ export default function Signup({ setToken }) {
             }
         );
 
-        setToken(token);
+        // setToken(token);
 
         setRedirect(true);
     }
