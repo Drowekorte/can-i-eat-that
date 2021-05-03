@@ -48,7 +48,7 @@ const {token, setToken} = useToken();
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/login" component={() => <Login setName={setName}/>} />
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/signup" component={() => <Signup setName={setName}/>} />
             <Route exact path="/preferences" component={Preferences} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
