@@ -23,7 +23,7 @@ const Recipe =({receiptData}) =>{
       <div className="right-section">
       <button className="btn" onClick={addFavorite}>
                 <span role="img" aria-label="heart" >❤️</span> Add to Favorites
-            </button>
+      </button>
         </div>
       </div>
   </div>

@@ -91,6 +91,11 @@ max-height:max-content;
     float: right;
     text-align: right;
 }
-.right-section .favoriteBtn:hover {
-    opacity: 1
-  }
+.right-section .btn:hover {
+    color: red;
+}
+.right-section .btn: {
+    text-align: :right;
+    padding: auto;
+    color: white;
+}
