@@ -1,0 +1,261 @@
+[
+  {
+    "id": 1,
+    "name": "Balanced",
+    "value": "balanced",
+    "tooltip": "Protein/Fat/Carb values in 15/35/50 ratio",
+    "isChecked": false
+  },
+  {
+    "id": 2,
+    "name": "High-Fiber",
+    "value": "high-fiber",
+    "tooltip": "More than 5g fiber per serving",
+    "isChecked": false
+  },
+  {
+    "id": 3,
+    "name": "High-Protein",
+    "value": "high-protein",
+    "tooltip": "More than 50% of total calories from proteins",
+    "isChecked": false
+  },
+  {
+    "id": 4,
+    "name": "Low-Carb",
+    "value": "low-carb",
+    "tooltip": "Less than 20% of total calories from carbs",
+    "isChecked": false
+  },
+  {
+    "id": 5,
+    "name": "Low-Fat",
+    "value": "low-fat",
+    "tooltip": "Less than 15% of total calories from fat",
+    "isChecked": false
+  },
+  {
+    "id": 6,
+    "name": "Low-Sodium",
+    "value": "low-sodium",
+    "tooltip": "Less than 140mg Na per serving",
+    "isChecked": false
+  },
+  {
+    "id": 7,
+    "name": "Alcohol-free",
+    "value": "alcohol-free",
+    "tooltip": "No alcohol used or contained",
+    "isChecked": false
+  },
+  {
+    "id": 8,
+    "name": "Immune-Supportive",
+    "value": "immuno-supportive",
+    "tooltip": "Recipes which fit a science-based approach to eating to strengthen the immune system",
+    "isChecked": false
+  },
+  {
+    "id": 9,
+    "name": "Celery-free",
+    "value": "celery-free",
+    "tooltip": "Does not contain celery or derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 10,
+    "name": "Crustcean-free",
+    "value": "crustacean-free",
+    "tooltip": "Does not contain crustaceans (shrimp, lobster etc.) or derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 11,
+    "name": "Dairy-free",
+    "value": "dairy-free",
+    "tooltip": "No dairy; no lactose",
+    "isChecked": false
+  },
+  {
+    "id": 12,
+    "name": "Eggs-free",
+    "value": "egg-free",
+    "tooltip": "No eggs or products containing eggs",
+    "isChecked": false
+  },
+  {
+    "id": 13,
+    "name": "Fish-free",
+    "value": "fish-free",
+    "tooltip": "No fish or fish derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 14,
+    "name": "FODMAP free",
+    "value": "fodmap-free",
+    "tooltip": "Does not contain FODMAP foods",
+    "isChecked": false
+  },
+  {
+    "id": 15,
+    "name": "Gluten-free",
+    "value": "gluten-free",
+    "tooltip": "No ingredients containing gluten",
+    "isChecked": false
+  },
+  {
+    "id": 16,
+    "name": "Keto",
+    "value": "keto-friendly",
+    "tooltip": "Maximum 7 grams of net carbs per serving",
+    "isChecked": false
+  },
+  {
+    "id": 17,
+    "name": "Kidney friendly",
+    "value": "kidney-friendly",
+    "tooltip": "Per serving – phosphorus less than 250 mg AND potassium less than 500 mg AND sodium less than 500 mg",
+    "isChecked": false
+  },
+  {
+    "id": 18,
+    "name": "Kosher",
+    "value": "kosher",
+    "tooltip": "Contains only ingredients allowed by the kosher diet. However it does not guarantee kosher preparation of the ingredients themselves",
+    "isChecked": false
+  },
+  {
+    "id": 19,
+    "name": "Low potassium",
+    "value": "low-potassium",
+    "tooltip": "Less than 150mg per serving",
+    "isChecked": false
+  },
+  {
+    "id": 20,
+    "name": "Lupine-free",
+    "value": "lupine-free",
+    "tooltip": "Does not contain lupine or derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 21,
+    "name": "Mustard-free",
+    "value": "mustard-free",
+    "tooltip": "Does not contain mustard or derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 22,
+    "name": "Low-Fat",
+    "value": "low-fat-abs",
+    "tooltip": "Less than 3g of fat per serving",
+    "isChecked": false
+  },
+  {
+    "id": 23,
+    "name": "No oil added",
+    "value": "No-oil-added",
+    "tooltip": "No oil added except to what is contained in the basic ingredients",
+    "isChecked": false
+  },
+  {
+    "id": 24,
+    "name": "No-sugar",
+    "value": "low-sugar",
+    "tooltip": "No simple sugars – glucose, dextrose, galactose, fructose, sucrose, lactose, maltose",
+    "isChecked": false
+  },
+  {
+    "id": 25,
+    "name": "Paleo",
+    "value": "paleo",
+    "tooltip": "Excludes what are perceived to be agricultural products; grains, legumes, dairy products, potatoes, refined salt, refined sugar, and processed oils",
+    "isChecked": false
+  },
+  {
+    "id": 26,
+    "name": "Peanuts-free",
+    "value": "peanut-free",
+    "tooltip": "No peanuts or products containing peanuts",
+    "isChecked": false
+  },
+  {
+    "id": 27,
+    "name": "Pescatarian",
+    "value": "pescatarian",
+    "tooltip": "Does not contain meat or meat based products, can contain dairy and fish",
+    "isChecked": false
+  },
+  {
+    "id": 28,
+    "name": "Pork-free",
+    "value": "pork-free",
+    "tooltip": "Does not contain pork or derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 29,
+    "name": "Red meat-free",
+    "value": "red-meat-free",
+    "tooltip": "Does not contain beef, lamb, pork, duck, goose, game, horse, and other types of red meat or products containing red meat.",
+    "isChecked": false
+  },
+  {
+    "id": 30,
+    "name": "Sesame-free",
+    "value": "sesame-free",
+    "tooltip": "Does not contain sesame seed or derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 31,
+    "name": "Shellfish-free",
+    "value": "shellfish-free",
+    "tooltip": "No shellfish or shellfish derivatives",
+    "isChecked": false
+  },
+  {
+    "id": 32,
+    "name": "Soy-free",
+    "value": "soy-free",
+    "tooltip": "No soy or products containing soy",
+    "isChecked": false
+  },
+  {
+    "id": 33,
+    "name": "Sugar-conscious",
+    "value": "sugar-conscious",
+    "tooltip": "Less than 4g of sugar per serving",
+    "isChecked": false
+  },
+  {
+    "id": 34,
+    "name": "Tree Nuts-free",
+    "value": "tree-nut-free",
+    "tooltip": "No tree nuts or products containing tree nuts",
+    "isChecked": false
+  },
+  {
+    "id": 35,
+    "name": "Vegan",
+    "value": "vegan",
+    "tooltip": "No meat, poultry, fish, dairy, eggs or honey",
+    "isChecked": false
+  },
+  {
+    "id": 36,
+    "name": "Vegetarian",
+    "value": "vegetarian",
+    "tooltip": "No meat, poultry, or fish",
+    "isChecked": false
+  },
+  {
+    "id": 37,
+    "name": "Wheat-free",
+    "value": "wheat-free",
+    "tooltip": "No wheat, can have gluten though",
+    "isChecked": false
+  }
+]
