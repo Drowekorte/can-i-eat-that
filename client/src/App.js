@@ -41,11 +41,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
-            <Route
-              exact
-              path="/login"
-              component={() => <Login setName={setName} />}
-            />
+            <Route exact path="/login" component={() => <Login setName={setName} />} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/posts/:id" component={Detail} />
 
