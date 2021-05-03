@@ -5,7 +5,7 @@ import { Redirect } from 'react-router'
 import PropTypes from 'prop-types';
 
 async function signupUser(credentials) {
-    return fetch("http://localhost:3000/signup", {
+    return fetch("/api/user/signup", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -43,7 +43,7 @@ export default function Signup({ setToken }) {
     }
 
     if (redirect) {
-        return <Redirect to="/login" />;
+        return <Redirect to="/home" />;
     }
 
     return (
@@ -55,7 +55,7 @@ export default function Signup({ setToken }) {
                     <input type="text" onChange={e => setUserName(e.target.value)} />
                 </label>
                 <label>
-                    <p>email</p>
+                    <p>Email</p>
                     <input type="text" onChange={e => setUserEmail(e.target.value)} />
                 </label>
 
@@ -76,6 +76,6 @@ export default function Signup({ setToken }) {
     )
 }
 
-signupUser.propTypes = {
+Signup.propTypes = {
     setToken: PropTypes.func.isRequired
 }
