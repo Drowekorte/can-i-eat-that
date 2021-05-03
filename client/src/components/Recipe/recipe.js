@@ -1,5 +1,5 @@
 import React from 'react';
-import './Recipe.css';
+import 'Recipe.css';
 const Recipe =({receiptData}) =>{
     return(
 

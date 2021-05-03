@@ -94,8 +94,8 @@ max-height:max-content;
 .right-section .btn:hover {
     color: red;
 }
-.right-section .btn: {
-    text-align: :right;
+.right-section .btn {
+    text-align: right;
     padding: auto;
     color: white;
 }
