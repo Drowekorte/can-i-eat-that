@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "mongoose": "^5.3.16",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16"
   },
   "repository": {
     "type": "git",
