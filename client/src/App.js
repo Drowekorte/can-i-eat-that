@@ -61,7 +61,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="App">
         <StoreProvider>
           <Nav name={name} />
           <Switch>
@@ -73,12 +73,12 @@ function App() {
             <PrivateRoute exact path="/preferences" component={Preferences} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/favorites" component={FavoritesList} />
-            <Route component={LoginSignup} />
+            <Route exact path="/login-signup" component={LoginSignup} />
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>
-      </div>
-      <div className="App">
+
+     
       <header className="App-header">
         
         <Logout />
