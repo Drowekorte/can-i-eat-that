@@ -1,9 +1,9 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
-  SET_CURRENT_POST,
-  REMOVE_POST,
-  UPDATE_POSTS,
-  ADD_POST,
+  SET_CURRENT_RECIPES,
+  REMOVE_RECIPES,
+  UPDATE_RECIPES,
+  ADD_RECIPES,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -15,39 +15,39 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case SET_CURRENT_POST:
+  case SET_CURRENT_RECIPES:
     return {
       ...state,
-      currentPost: action.post,
+      currentRecipes: action.recipe,
       loading: false
     };
 
-  case UPDATE_POSTS:
+  case UPDATE_RECIPES:
     return {
       ...state,
-      posts: [...action.posts],
+      recipes: [...action.recipes],
       loading: false
     };
 
-  case ADD_POST:
+  case ADD_RECIPES:
     return {
       ...state,
-      posts: [action.post, ...state.posts],
+      recipes: [action.recipe, ...state.recipes],
       loading: false
     };
 
-  case REMOVE_POST:
+  case REMOVE_RECIPES:
     return {
       ...state,
-      posts: state.posts.filter((post) => {
-        return post._id !== action._id; 
+      recipes: state.recipes.filter((recipe) => {
+        return recipe._id !== action._id; 
       })
     };
 
   case ADD_FAVORITE:
     return {
       ...state,
-      favorites: [action.post, ...state.favorites],
+      favorites: [action.recipe, ...state.favorites],
       loading: false
     };
 
@@ -61,8 +61,8 @@ const reducer = (state, action) => {
   case REMOVE_FAVORITE:
     return {
       ...state,
-      favorites: state.favorites.filter((post) => {
-        return post._id !== action._id; 
+      favorites: state.favorites.filter((recipe) => {
+        return recipe._id !== action._id; 
       })
     };
 
@@ -79,8 +79,8 @@ const reducer = (state, action) => {
 
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
-    posts: [],
-    currentPost: {
+    recipes: [],
+    currentRecipe: {
       _id: 0,
       title: "",
       body: "",

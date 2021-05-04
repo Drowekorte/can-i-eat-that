@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import CreatePostForm from "../components/CreatePostForm";
-import PostsList from "../components/PostsList";
+import SearchRecipesForm from "../components/SearchRecipesForm";
+import PostsList from "../components/RecipeList";
 
 const Home = (props) => {
     
@@ -10,10 +10,10 @@ return (
     <div>{props.name ? 'Welcome back' + props.name : 'You are not logged in'}</div>
     <Row>
       <Col size="md-6">
-        <CreatePostForm />
+        <SearchRecipesForm />
       </Col>
       <Col size="md-6 sm-12">
-        <PostsList />
+        <RecipeList />
       </Col>
     </Row>
   </Container>

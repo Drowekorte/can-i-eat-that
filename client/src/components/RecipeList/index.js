@@ -3,53 +3,53 @@ import { ListItem, List } from "../List";
 import DeleteBtn from "../DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
-import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
+import { REMOVE_RECIPE, UPDATE_RECIPES, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 
-function PostsList() {
+function RecipesList() {
   const [state, dispatch] = useStoreContext();
 
-  const removePost = id => {
-    API.deletePost(id)
+  const removeRecipe = id => {
+    API.deleteRecipe(id)
       .then(() => {
         dispatch({
-          type: REMOVE_POST,
+          type: REMOVE_RECIPE,
           _id: id
         });
       })
       .catch(err => console.log(err));
   };
 
-  const getPosts = () => {
+  const getRecipes = () => {
     dispatch({ type: LOADING });
-    API.getPosts()
+    API.getRecipes()
       .then(results => {
         dispatch({
-          type: UPDATE_POSTS,
-          posts: results.data
+          type: UPDATE_RECIPES,
+          recipes: results.data
         });
       })
       .catch(err => console.log(err));
   };
 
   useEffect(() => {
-    getPosts();
+    getRecipes();
   }, []);
 
   return (
     <div>
       <h1></h1>
       <h3 className="mb-5 mt-5"></h3>
-      {state.posts.length ? (
+      {state.recipes.length ? (
         <List>
-          {state.posts.map(post => (
-            <ListItem key={post._id}>
-              <Link to={"/posts/" + post._id}>
+          {state.recipes.map(recipe => (
+            <ListItem key={recipe._id}>
+              <Link to={"/recipes/" + recipe._id}>
                 <strong>
-                  {post.title} by {post.author}
+                  {recipe.title} by {recipe.author}
                 </strong>
               </Link>
-              <DeleteBtn onClick={() => removePost(post._id)} />
+              <DeleteBtn onClick={() => removeRecipe(recipe._id)} />
             </ListItem>
           ))}
         </List>
@@ -63,4 +63,4 @@ function PostsList() {
   );
 }
 
-export default PostsList;
+export default RecipesList;

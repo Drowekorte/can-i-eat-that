@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
-import { ADD_POST, LOADING } from '../../utils/actions';
+import { ADD_RECIPE, LOADING } from '../../utils/actions';
 import API from '../../utils/API';
 import './style.css';
 
-function CreatePostForm() {
+function SearchRecipesForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
@@ -13,7 +13,7 @@ function CreatePostForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: LOADING });
-    API.savePost({
+    API.saveRecipe({
       title: titleRef.current.value,
       body: bodyRef.current.value,
       author: authorRef.current.value,
@@ -21,7 +21,7 @@ function CreatePostForm() {
       .then((result) => {
         dispatch({
           type: ADD_POST,
-          post: result.data,
+          recipe: result.data,
         });
       })
       .catch((err) => console.log(err));
@@ -72,4 +72,4 @@ function CreatePostForm() {
   );
 }
 
-export default CreatePostForm;
+export default SearchRecipesForm;

@@ -1,7 +1,7 @@
-export const UPDATE_POSTS = "UPDATE_POSTS";
-export const REMOVE_POST = "REMOVE_POST";
-export const SET_CURRENT_POST = "SET_CURRENT_POST";
-export const ADD_POST = "ADD_POST";
+export const UPDATE_RECIPES = "UPDATE_RECIPES";
+export const REMOVE_RECIPES = "REMOVE_RECIPES";
+export const SET_CURRENT_RECIPES = "SET_CURRENT_RECIPES";
+export const ADD_RECIPES = "ADD_RECIPES";
 export const LOADING = "LOADING";
 
 export const ADD_FAVORITE = "ADD_FAVORITE";
