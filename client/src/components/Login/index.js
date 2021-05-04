@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
-
+import "./style.css";
 
 async function loginUser(credentials) {
     return fetch("/api/user/login", {
@@ -38,6 +38,7 @@ export default function Login({ setToken }) {
 
 
     return (
+        <h1 className="log-in">
         <div className="login-wrapper">
             <h1>Please Log In</h1>
             <form onSubmit={handleSubmit}>
@@ -51,12 +52,13 @@ export default function Login({ setToken }) {
                 </label>
                 <div>
 
-                    <button type="submit">
+                    <button type="submit" className="submit">
                         Submit</button>
 
                 </div>
             </form>
         </div>
+        </h1>
     )
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { Link } from "react-router-dom";
+import './style.css';
 
 function Nav(props) {
   const logout = async () => {
@@ -39,29 +40,37 @@ function Nav(props) {
   const [store] = useStoreContext();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="/">
+    <nav className="navbar">
+      <a className="eat" href="/">
         Can I Eat That? | Your personal recipe finder
       </a>
       <nav className="">
-        <div className="">
-          <Link to="/" className="">Home</Link>
+        <div className="home">
+          <Link to="/" className="home">Home</Link>
+          <div>
+          </div>
+        </div>
+      </nav>
+      
+      <nav className="">
+        <div className="favorites">
+          <Link to="/login" className="favorites">Favorites</Link>
           <div>
 
           </div>
         </div>
       </nav>
       <nav className="">
-        <div className="">
-          <Link to="client/src/components/Login/index.js" className="">Login</Link>
+        <div className="login">
+          <Link to="/login" className="login">Login</Link>
           <div>
 
           </div>
         </div>
       </nav>
       <nav className="">
-        <div className="">
-          <Link to="client/src/components/Signup/index.js" className="">Signup</Link>
+        <div className="signup">
+          <Link to="/signup" className="signup">Signup</Link>
           <div>
 
           </div>
