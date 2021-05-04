@@ -48,13 +48,21 @@ function Nav(props) {
         <div className="home">
           <Link to="/" className="home">Home</Link>
           <div>
+          </div>
+        </div>
+      </nav>
+      
+      <nav className="">
+        <div className="favorites">
+          <Link to="/login" className="favorites">Favorites</Link>
+          <div>
 
           </div>
         </div>
       </nav>
       <nav className="">
         <div className="login">
-          <Link to="client/src/components/Login/index.js" className="login">Login</Link>
+          <Link to="/login" className="login">Login</Link>
           <div>
 
           </div>
@@ -62,7 +70,7 @@ function Nav(props) {
       </nav>
       <nav className="">
         <div className="signup">
-          <Link to="client/src/components/Signup/index.js" className="signup">Signup</Link>
+          <Link to="/signup" className="signup">Signup</Link>
           <div>
 
           </div>

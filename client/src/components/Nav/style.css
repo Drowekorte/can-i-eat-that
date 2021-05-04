@@ -36,3 +36,12 @@
 .signup:hover {
     background-color: #FCC119;
 }
+.favorites {
+    color:black;
+    margin: 1px;
+    padding: 3px;
+    font-size: 30px;
+}
+.favorites:hover {
+    background-color:#FCC119;
+}    
