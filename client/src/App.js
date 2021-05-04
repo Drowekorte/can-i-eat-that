@@ -12,6 +12,7 @@ import Preferences from "./components/Preferences";
 import LoginSignup from "./pages/LoginSignup";
 import useToken from "./utils/useToken";
 import PrivateRoute from "./utils/PrivateRoute";
+
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -21,10 +22,16 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
   
-})
+});
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 
 function App() {
+  // Firebase Auth
+  const [user] = useAuthState(auth);
+
   const [name, setName] = useState();
   useEffect(() => {
     (async () => {
@@ -62,8 +69,37 @@ function App() {
           </Switch>
         </StoreProvider>
       </div>
+      <div className="App">
+      <header>
+        <h1>⚛️🔥💬</h1>
+        <Logout />
+      </header>
+
+      <section>
+        {user ? <Home /> : <Login />}
+      </section>
+
+    </div>
     </Router>
+    
   );
 }
+
+function Login() {
+  const loginWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+  return (
+    <button onClick={signInWithGoogle}>Sign in with Google</button>
+  )
+}
+
+function Logout() {
+  return auth.currentUser && (
+    <button onClick={() => auth.signOut()}>Sign Out</button>
+  )
+}
+
 
 export default App;
