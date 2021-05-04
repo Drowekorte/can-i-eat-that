@@ -16,15 +16,31 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-import { useAuthState } from "react-firebasehooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
   
-})
+    apiKey: "AIzaSyDbmkv3v6WdlJ5OdHuBvLLRLFROcrVth-k",
+    authDomain: "can-i-eat-that-d11ed.firebaseapp.com",
+    projectId: "can-i-eat-that-d11ed",
+    storageBucket: "can-i-eat-that-d11ed.appspot.com",
+    messagingSenderId: "477223806458",
+    appId: "1:477223806458:web:4fdf2320faa132f7e73043",
+    measurementId: "G-V1PSVTC1JE"
+
+});
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 
 function App() {
+  // Firebase Auth
+  const [user] = useAuthState(auth);
+
+
+
   const [name, setName] = useState();
   useEffect(() => {
     (async () => {
@@ -45,7 +61,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="App">
         <StoreProvider>
           <Nav name={name} />
           <Switch>
@@ -57,13 +73,43 @@ function App() {
             <PrivateRoute exact path="/preferences" component={Preferences} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/favorites" component={FavoritesList} />
-            <Route component={LoginSignup} />
+            <Route exact path="/login-signup" component={LoginSignup} />
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>
-      </div>
+
+     
+      <header className="App-header">
+        
+        <Logout />
+      </header>
+
+      <section>
+        {user ? <Home /> : <Login />}
+      </section>
+
+    </div>
     </Router>
+    
   );
+  };
+
+function Login() {
+  const loginWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+  return (
+    <button onClick={loginWithGoogle}>Sign in with Google</button>
+  )
 }
+
+function Logout() {
+
+  return auth.currentUser && (
+    <button onClick={() => auth.logout()}>Sign Out</button>
+  )
+}
+
 
 export default App;
