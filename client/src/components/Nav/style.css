@@ -1,0 +1,38 @@
+.navbar {
+    background-color: #fced08;
+    padding: 40px;
+} 
+.eat {
+    color: black;
+    font-size: 70px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+.login {
+    color:black;
+    margin: 1px;
+    padding: 3px;
+    font-size: 30px;
+}
+.login:hover {
+    background-color:#FCC119;    
+}
+.home {
+    color:black;
+    margin: 1px;
+    padding: 3px;
+    font-size: 30px;
+}
+.home:hover {
+    background-color: #FCC119;
+}
+.signup {
+    color:black;
+    margin: 1px;
+    padding: 3px;
+    font-size: 30px;
+}
+.signup:hover {
+    background-color: #FCC119;
+}
