@@ -9,10 +9,20 @@ import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 import Dashboard from "./components/Dashboard";
 import Preferences from "./components/Preferences";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import LoginSignup from "./pages/LoginSignup";
 import useToken from "./utils/useToken";
 import PrivateRoute from "./utils/PrivateRoute";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+
+import { useAuthState } from "react-firebasehooks/auth";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+
+firebase.initializeApp({
+  
+})
+
 
 function App() {
   const [name, setName] = useState();
@@ -41,14 +51,13 @@ function App() {
           <Switch>
             <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/login" component={() => <Login setName={setName} />} />
-            <Route exact path="/signup" component={Signup} />
+            {/* Change posts to recipes */}
             <Route exact path="/posts/:id" component={Detail} />
 
             <PrivateRoute exact path="/preferences" component={Preferences} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/favorites" component={FavoritesList} />
-
+            <Route component={LoginSignup} />
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>
