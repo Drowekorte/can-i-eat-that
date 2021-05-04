@@ -16,20 +16,8 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-import { useAuthState } from "react-firebasehooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-
-firebase.initializeApp({
-  
-})
-
-
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
-
-import { useAuthState } from "react-firebasehooks/auth";
-// import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
   
@@ -50,6 +38,8 @@ const firestore = firebase.firestore();
 function App() {
   // Firebase Auth
   const [user] = useAuthState(auth);
+
+
 
   const [name, setName] = useState();
   useEffect(() => {
@@ -102,7 +92,7 @@ function App() {
     </Router>
     
   );
-}
+  };
 
 function Login() {
   const loginWithGoogle = () => {
@@ -115,8 +105,9 @@ function Login() {
 }
 
 function Logout() {
+
   return auth.currentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button onClick={() => auth.logout()}>Sign Out</button>
   )
 }
 
