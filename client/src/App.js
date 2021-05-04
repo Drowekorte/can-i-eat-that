@@ -18,10 +18,18 @@ import "firebase/firestore";
 import "firebase/auth";
 
 import { useAuthState } from "react-firebasehooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
+// import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
   
+    apiKey: "AIzaSyDbmkv3v6WdlJ5OdHuBvLLRLFROcrVth-k",
+    authDomain: "can-i-eat-that-d11ed.firebaseapp.com",
+    projectId: "can-i-eat-that-d11ed",
+    storageBucket: "can-i-eat-that-d11ed.appspot.com",
+    messagingSenderId: "477223806458",
+    appId: "1:477223806458:web:4fdf2320faa132f7e73043",
+    measurementId: "G-V1PSVTC1JE"
+
 });
 
 const auth = firebase.auth();
@@ -70,8 +78,8 @@ function App() {
         </StoreProvider>
       </div>
       <div className="App">
-      <header>
-        <h1>⚛️🔥💬</h1>
+      <header className="App-header">
+        
         <Logout />
       </header>
 
@@ -91,7 +99,7 @@ function Login() {
     auth.signInWithPopup(provider);
   }
   return (
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <button onClick={loginWithGoogle}>Sign in with Google</button>
   )
 }
 
