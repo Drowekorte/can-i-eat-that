@@ -33,41 +33,36 @@ function CreatePostForm() {
     <div>
       <div className="jumbotron">
         <img
-          className="img-fluid img-thumbnail"
-          src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          //className="img-fluid img-thumbnail"
+          //src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         />
       </div>
-      <h1>Search</h1>
+      <h1>Can I Eat That?</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Keywork:</label>
         <input
           className="form-control mb-5"
-          required
           ref={titleRef}
           id="title"
-          placeholder="Title"
         />
-        <label htmlFor="body">Body:</label>
+        <label htmlFor="body">Health:</label>
         <textarea
           className="form-control mb-5"
-          required
           ref={bodyRef}
           id="body"
-          placeholder="Body"
         />
-        <label htmlFor="screen name">Screen Name:</label>
+        <label htmlFor="screen name">Diet:</label>
         <input
           className="form-control mb-5"
           ref={authorRef}
           id="screen name"
-          placeholder="Screen name"
         />
         <button
           className="btn btn-success mt-3 mb-5"
           disabled={state.loading}
           type="submit"
         >
-          Save Post
+          Search
         </button>
       </form>
     </div>
