@@ -20,7 +20,7 @@ function SearchRecipesForm() {
     })
       .then((result) => {
         dispatch({
-          type: ADD_POST,
+          type: ADD_RECIPE,
           recipe: result.data,
         });
       })
