@@ -47,29 +47,35 @@ export default function Signup({ setToken }) {
     }
 
     return (
-        <div className="login-wrapper">
+        <div className="flex-container">
             <h1>Please Signup</h1>
             <form onSubmit={handleSubmit}>
+                <div>
                 <label>
                     <p>Name</p>
                     <input type="text" onChange={e => setUserName(e.target.value)} />
                 </label>
+                </div>
+                <div>
                 <label>
                     <p>Email</p>
                     <input type="text" onChange={e => setUserEmail(e.target.value)} />
                 </label>
-
+                </div>
+                <div>
                 <label>
                     <p>Username</p>
                     <input type="text" onChange={e => setUserUsername(e.target.value)} />
                 </label>
-
+                </div>
+                <div>
                 <label>
                     <p>Password</p>
                     <input type="current-password" onChange={e => setPassword(e.target.value)} />
                 </label>
+                </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button className="submit" type="submit">Submit</button>
                 </div>
             </form>
         </div>

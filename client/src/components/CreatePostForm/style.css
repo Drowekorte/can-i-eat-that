@@ -1,0 +1,11 @@
+.search {
+    text-align: center;
+    color:black;    
+}
+.submit {
+    background-color: #99f03c;
+    border-radius: 25px;
+}
+.submit:hover {
+    background-color: #16755B;
+}

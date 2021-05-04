@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_POST, LOADING } from '../../utils/actions';
 import API from '../../utils/API';
+import './style.css';
 
 function CreatePostForm() {
   const titleRef = useRef();
@@ -37,34 +38,36 @@ function CreatePostForm() {
           //src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         />
       </div>
+      <div  className="search">
       <h1>Can I Eat That?</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <label htmlFor="title">Keywork:</label>
+        <label htmlFor="title">Search by Keywork:</label>
         <input
           className="form-control mb-5"
           ref={titleRef}
-          id="title"
+          id="keyword"
         />
-        <label htmlFor="body">Health:</label>
+        <label htmlFor="body">Health Labels:</label>
         <textarea
           className="form-control mb-5"
           ref={bodyRef}
-          id="body"
+          id="health"
         />
-        <label htmlFor="screen name">Diet:</label>
+        <label htmlFor="screen name">Diet Labels:</label>
         <input
           className="form-control mb-5"
           ref={authorRef}
-          id="screen name"
+          id="diet"
         />
-        <button
-          className="btn btn-success mt-3 mb-5"
+        <button className="submit"
+          //className="btn btn-success mt-3 mb-5"
           disabled={state.loading}
           type="submit"
         >
           Search
         </button>
       </form>
+    </div>
     </div>
   );
 }

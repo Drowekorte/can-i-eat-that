@@ -12,6 +12,17 @@ import Preferences from "./components/Preferences";
 import LoginSignup from "./pages/LoginSignup";
 import useToken from "./utils/useToken";
 import PrivateRoute from "./utils/PrivateRoute";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+
+import { useAuthState } from "react-firebasehooks/auth";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+
+firebase.initializeApp({
+  
+})
+
 
 import firebase from "firebase/app";
 import "firebase/firestore";
