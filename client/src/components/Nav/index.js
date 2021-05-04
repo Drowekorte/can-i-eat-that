@@ -51,6 +51,22 @@ function Nav(props) {
           </div>
         </div>
       </nav>
+      <nav className="">
+        <div className="">
+          <Link to="client/src/components/Login/index.js" className="">Login</Link>
+          <div>
+
+          </div>
+        </div>
+      </nav>
+      <nav className="">
+        <div className="">
+          <Link to="client/src/components/Signup/index.js" className="">Signup</Link>
+          <div>
+
+          </div>
+        </div>
+      </nav>
       {store.loading ? <a className="navbar-brand ml-auto">Loading...</a> : <></>}
     </nav>
   );
