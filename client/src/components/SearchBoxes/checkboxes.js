@@ -10,10 +10,10 @@ function CheckBox(props) {
   return (
     <li>
       <OverlayTrigger
-        key={placement}
-        placement={placement}
+        key="bottom"
+        placement="bottom"
         overlay={
-          <Tooltip id={`tooltip-${placement}`}>
+          <Tooltip id={props.id}>
             <p>{props.tooltip}</p>.
           </Tooltip>
         }
