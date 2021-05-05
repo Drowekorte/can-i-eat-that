@@ -18,5 +18,8 @@
         "panel.border": "#ff6433",
         "sideBar.border": "#ff6433"
     },
-    "peacock.color": "#ff3d00"
+    "peacock.color": "#ff3d00",
+    "cSpell.words": [
+        "searchoptions"
+    ]
 }
