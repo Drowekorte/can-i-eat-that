@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import SearchRecipesForm from "../components/SearchRecipesForm";
+import SearchBoxes from "../components/SearchBoxes/searchboxes.js";
 import RecipeList from "../components/RecipeList";
 
 const Home = (props) => {
@@ -10,7 +10,7 @@ return (
     <div>{props.name ? 'Welcome back' + props.name : 'You are not logged in'}</div>
     <Row>
       <Col size="md-6">
-        <SearchRecipesForm />
+        <SearchBoxes />
       </Col>
       <Col size="md-6 sm-12">
         <RecipeList />
