@@ -20,26 +20,21 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
-  
-    apiKey: "AIzaSyDbmkv3v6WdlJ5OdHuBvLLRLFROcrVth-k",
-    authDomain: "can-i-eat-that-d11ed.firebaseapp.com",
-    projectId: "can-i-eat-that-d11ed",
-    storageBucket: "can-i-eat-that-d11ed.appspot.com",
-    messagingSenderId: "477223806458",
-    appId: "1:477223806458:web:4fdf2320faa132f7e73043",
-    measurementId: "G-V1PSVTC1JE"
-
+  apiKey: "AIzaSyDbmkv3v6WdlJ5OdHuBvLLRLFROcrVth-k",
+  authDomain: "can-i-eat-that-d11ed.firebaseapp.com",
+  projectId: "can-i-eat-that-d11ed",
+  storageBucket: "can-i-eat-that-d11ed.appspot.com",
+  messagingSenderId: "477223806458",
+  appId: "1:477223806458:web:4fdf2320faa132f7e73043",
+  measurementId: "G-V1PSVTC1JE",
 });
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-
 function App() {
   // Firebase Auth
   const [user] = useAuthState(auth);
-
-
 
   const [name, setName] = useState();
   useEffect(() => {
@@ -59,6 +54,20 @@ function App() {
 
   const { token, setToken } = useToken();
 
+  function Login() {
+    const loginWithGoogle = () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider);
+    };
+    return <button onClick={loginWithGoogle}>Sign in with Google</button>;
+  }
+  
+  function Logout() {
+    return (
+      auth.currentUser && <button onClick={() => auth.logout()}>Sign Out</button>
+    );
+  }
+
   return (
     <Router>
       <div className="App">
@@ -67,7 +76,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
-          
+
             <Route exact path="/recipes/:id" component={Detail} />
 
             <PrivateRoute exact path="/preferences" component={Preferences} />
@@ -78,37 +87,14 @@ function App() {
           </Switch>
         </StoreProvider>
 
-     
-      <header className="App-header">
-        
-        <Logout />
-      </header>
+        <header className="App-header">
+          <Logout />
+        </header>
 
-      <section>
-        {user ? <Home /> : <Login />}
-      </section>
-
-    </div>
+        <section>{user ? <Home /> : <Login />}</section>
+      </div>
     </Router>
-    
   );
-  };
-
-function Login() {
-  const loginWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
-  return (
-    <button onClick={loginWithGoogle}>Sign in with Google</button>
-  )
-}
-
-function Logout() {
-
-  return auth.currentUser && (
-    <button onClick={() => auth.logout()}>Sign Out</button>
-  )
 }
 
 
