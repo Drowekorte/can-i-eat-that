@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_RECIPE, LOADING } from '../../utils/actions';
-// import SearchBoxes from "../SearchBoxes/searchboxes.js";
+import SearchBoxes from "../SearchBoxes/searchboxes.js";
 import API from '../../utils/API';
 import './style.css';
 
@@ -43,7 +43,7 @@ function SearchRecipesForm() {
           id="keyword"
         />
         <label htmlFor="body">Search by Diet and Health Labels</label>
-        {/* <SearchBoxes /> */}
+        <SearchBoxes />
 
         <button className="submit"
           //className="btn btn-success mt-3 mb-5"
