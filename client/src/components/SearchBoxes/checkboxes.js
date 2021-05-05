@@ -4,9 +4,15 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import InputGroup from "react-bootstrap/InputGroup";
 
 function CheckBox(props) {
+  console.log(props.tooltip);
   return (
     <div>
       <li>
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <InputGroup.Checkbox aria-label={props.tooltip} />
+          </InputGroup.Prepend>
+        </InputGroup>
         <OverlayTrigger
           key="bottom"
           placement="bottom"
@@ -24,7 +30,7 @@ function CheckBox(props) {
               checked={props.isChecked}
               value={props.value}
               prefix={props.prefix}
-            />{" "}
+            />
             {props.name}
           </div>
         </OverlayTrigger>
