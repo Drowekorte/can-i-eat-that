@@ -5,6 +5,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 function CheckBox(props) {
   return (
+    <div>
     <li>
     <InputGroup className="mb-3">
     <InputGroup.Prepend>
@@ -31,6 +32,7 @@ function CheckBox(props) {
         {props.name}
       </OverlayTrigger>
     </li>
+      </div>
   );
 }
 

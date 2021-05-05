@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_RECIPE, LOADING } from '../../utils/actions';
-import SearchBoxes from "../SearchBoxes/searchboxes.js";
+// import SearchBoxes from "../SearchBoxes/searchboxes.js";
 import API from '../../utils/API';
 import './style.css';
 
