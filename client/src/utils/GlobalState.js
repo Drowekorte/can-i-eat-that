@@ -14,6 +14,7 @@ const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
+  console.log(state)
   switch (action.type) {
   case SET_CURRENT_RECIPES:
     return {

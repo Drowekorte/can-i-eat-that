@@ -24,19 +24,15 @@ class SearchBoxes extends Component {
 
   render() {
     return (
-      <div className="Search">
-        <h2>Search by Diet and Health Labels</h2>
         <ul>
           {this.state.searchOptions.map(srchOpt => (
               <CheckBox
                 key={srchOpt.id}
-                handleCheckChieldElement={this.handleCheckChieldElement}
                 name={srchOpt.name}
               />
             )
           )}
         </ul>
-      </div>
     );
   }
 }
