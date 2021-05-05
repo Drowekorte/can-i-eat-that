@@ -42,8 +42,9 @@ function Nav(props) {
   return (
     <nav className="navbar">
       <a className="eat" href="/">
-        Can I Eat That? | Your personal recipe finder
+        Can I Eat That?
       </a>
+        Your personal recipe finder
       <nav className="">
         <div className="home">
           <Link to="/" className="home">Home</Link>
