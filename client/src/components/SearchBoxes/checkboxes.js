@@ -1,17 +1,16 @@
 import React from "react";
-import { MDCFormField } from "@material/form-field";
-import { MDCCheckbox } from "@material/checkbox";
-import OverlayTrigger from "react";
-import { Tooltip } from "react-bootstrap";
-
-const checkbox = new MDCCheckbox(document.querySelector(".mdc-checkbox"));
-const formField = new MDCFormField(document.querySelector(".mdc-form-field"));
-formField.input = checkbox;
-
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import InputGroup from "react-bootstrap/InputGroup";
 
 function CheckBox(props) {
   return (
     <li>
+    <InputGroup className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Checkbox aria-label={props.tooltip} />
+    </InputGroup.Prepend>
+  </InputGroup>
       <OverlayTrigger
         key="bottom"
         placement="bottom"
