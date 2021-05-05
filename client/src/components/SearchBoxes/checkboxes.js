@@ -26,6 +26,7 @@ function CheckBox(props) {
           type="checkbox"
           checked={props.isChecked}
           value={props.value}
+          prefix={props.prefix}
         />{" "}
         {props.name}
       </OverlayTrigger>
