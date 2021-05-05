@@ -4,14 +4,14 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import { SET_CURRENT_RECIPE, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
+import { SET_CURRENT_RECIPES, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
 
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
     API.getRecipe(props.match.params.id)
-      .then(res => dispatch({ type: SET_CURRENT_RECIPE, recipe: res.data }))
+      .then(res => dispatch({ type: SET_CURRENT_RECIPES, recipe: res.data }))
       .catch(err => console.log(err));
   }, []);
 
