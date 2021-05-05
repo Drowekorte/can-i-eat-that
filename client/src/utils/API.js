@@ -21,7 +21,7 @@ export default {
     return axios.delete("/api/recipes/" + id);
   },
   // Saves a post to the dat API
-  saveRecipes: function (postData) {
+  saveRecipes: function (recipesData) {
     return axios.post("/api/recipes", recipesData);
   },
 };
