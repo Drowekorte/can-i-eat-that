@@ -26,20 +26,15 @@ class SearchBoxes extends Component {
 
   render() {
     return (
-      <div>
       <ul>
         {this.state.searchOptions.map((srchOpt) => (
           <CheckBox
             key={srchOpt.id}
             name={srchOpt.name}
-            checked={srchOpt.isChecked}
-            value={srchOpt.value}
-            prefix={srchOpt.prefix}
             tooltip={srchOpt.tooltip}
           />
         ))}
       </ul>
-      </div>
     );
   }
 }
