@@ -5,7 +5,7 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 
-const bookSeed = [
+const recipeSeed = [
   {
     title: "Hello World",
     author: "admin",
@@ -29,8 +29,8 @@ const bookSeed = [
   }
 ];
 
-db.Post.remove({})
-  .then(() => db.Post.collection.insertMany(bookSeed))
+db.Recipe.remove({})
+  .then(() => db.Recipe.collection.insertMany(bookSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

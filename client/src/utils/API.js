@@ -3,25 +3,25 @@ import axios from "axios";
 
 export default {
   signup: function (body) {
-    return axios.post("/api/signup", body);
+    return axios.post("/api/login-signup", body);
   },
   login: function (body) {
-    return axios.post("/api/login", body);
+    return axios.post("/api/login-signup", body);
   },
   // Gets all posts
-  getPosts: function () {
-    return axios.get("/api/posts");
+  getRecipes: function () {
+    return axios.get("/api/recipes");
   },
   // Gets the post with the given id
-  getPost: function (id) {
-    return axios.get("/api/posts/" + id);
+  getRecipes: function (id) {
+    return axios.get("/api/recipes/" + id);
   },
   // Deletes the post with the given id
-  deletePost: function (id) {
-    return axios.delete("/api/posts/" + id);
+  deleteRecipes: function (id) {
+    return axios.delete("/api/recipes/" + id);
   },
   // Saves a post to the dat API
-  savePost: function (postData) {
-    return axios.post("/api/posts", postData);
+  saveRecipes: function (postData) {
+    return axios.post("/api/recipes", recipesData);
   },
 };

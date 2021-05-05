@@ -67,8 +67,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
-            {/* Change posts to recipes */}
-            <Route exact path="/posts/:id" component={Detail} />
+          
+            <Route exact path="/recipes/:id" component={Detail} />
 
             <PrivateRoute exact path="/preferences" component={Preferences} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
