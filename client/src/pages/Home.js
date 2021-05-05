@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import SearchRecipesForm from "../components/SearchRecipesForm";
-import PostsList from "../components/RecipeList";
+import RecipeList from "../components/RecipeList";
 
 const Home = (props) => {
     

@@ -1,9 +1,9 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
   SET_CURRENT_RECIPES,
-  REMOVE_RECIPES,
+  REMOVE_RECIPE,
   UPDATE_RECIPES,
-  ADD_RECIPES,
+  ADD_RECIPE,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -29,14 +29,14 @@ const reducer = (state, action) => {
       loading: false
     };
 
-  case ADD_RECIPES:
+  case ADD_RECIPE:
     return {
       ...state,
       recipes: [action.recipe, ...state.recipes],
       loading: false
     };
 
-  case REMOVE_RECIPES:
+  case REMOVE_RECIPE:
     return {
       ...state,
       recipes: state.recipes.filter((recipe) => {
