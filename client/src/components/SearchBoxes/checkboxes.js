@@ -1,10 +1,13 @@
 import React from "react";
 import { MDCFormField } from "@material/form-field";
 import { MDCCheckbox } from "@material/checkbox";
+import OverlayTrigger from "react";
+import { Tooltip } from "react-bootstrap";
+
 const checkbox = new MDCCheckbox(document.querySelector(".mdc-checkbox"));
 const formField = new MDCFormField(document.querySelector(".mdc-form-field"));
 formField.input = checkbox;
-import Tooltip from "react-bootstrap/Tooltip";
+
 
 function CheckBox(props) {
   return (
@@ -20,7 +23,7 @@ function CheckBox(props) {
       >
         <input
           key={props.id}
-          onClick={props.handleCheckChieldElement}
+          onClick={props.handleCheckChildElement}
           type="checkbox"
           checked={props.isChecked}
           value={props.value}
