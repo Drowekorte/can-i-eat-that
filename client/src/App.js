@@ -61,10 +61,12 @@ function App() {
     };
     return <button onClick={loginWithGoogle}>Sign in with Google</button>;
   }
-  
+
   function Logout() {
     return (
-      auth.currentUser && <button onClick={() => auth.logout()}>Sign Out</button>
+      auth.currentUser && (
+        <button onClick={() => auth.logout()}>Sign Out</button>
+      )
     );
   }
 
@@ -96,6 +98,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
