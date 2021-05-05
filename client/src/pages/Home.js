@@ -1,21 +1,23 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import CreatePostForm from "../components/CreatePostForm";
-import PostsList from "../components/PostsList";
+import SearchRecipesForm from "../components/SearchRecipesForm";
+import RecipeList from "../components/RecipeList";
 
-const Home = () => {
-  return (
-    <Container fluid>
-      <Row>
-        <Col size="md-6">
-          <CreatePostForm />
-        </Col>
-        <Col size="md-6 sm-12">
-          <PostsList />
-        </Col>
-      </Row>
-    </Container>
-  );
+const Home = (props) => {
+    
+return (
+  <Container fluid>
+    <div>{props.name ? 'Welcome back' + props.name : 'You are not logged in'}</div>
+    <Row>
+      <Col size="md-6">
+        <SearchRecipesForm />
+      </Col>
+      <Col size="md-6 sm-12">
+        <RecipeList />
+      </Col>
+    </Row>
+  </Container>
+);
 };
 
 export default Home;

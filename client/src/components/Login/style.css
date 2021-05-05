@@ -1,0 +1,15 @@
+.log-in {
+    text-align: center;
+    font-size: 35px;
+    padding: 3px;
+    margin: 5px;
+}
+.submit {
+    background-color: #99f03c;
+    border-radius: 35px;
+    padding: 3px 12px 5px;
+    margin: 3px;
+}
+.submit:hover {
+    background-color: #16755B;
+}

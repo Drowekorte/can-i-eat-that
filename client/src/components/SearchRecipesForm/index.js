@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_RECIPE, LOADING } from '../../utils/actions';
+import SearchBoxes from "../SearchBoxes/searchboxes.js";
 import API from '../../utils/API';
 import './style.css';
 
@@ -32,12 +33,6 @@ function SearchRecipesForm() {
 
   return (
     <div>
-      <div className="jumbotron">
-        <img
-          //className="img-fluid img-thumbnail"
-          //src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        />
-      </div>
       <div  className="search">
       <h1>Can I Eat That?</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
@@ -47,18 +42,9 @@ function SearchRecipesForm() {
           ref={titleRef}
           id="keyword"
         />
-        <label htmlFor="body">Health Labels:</label>
-        <textarea
-          className="form-control mb-5"
-          ref={bodyRef}
-          id="health"
-        />
-        <label htmlFor="screen name">Diet Labels:</label>
-        <input
-          className="form-control mb-5"
-          ref={authorRef}
-          id="diet"
-        />
+        <label htmlFor="body">Search by Diet and Health Labels</label>
+        <SearchBoxes />
+
         <button className="submit"
           //className="btn btn-success mt-3 mb-5"
           disabled={state.loading}
