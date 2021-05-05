@@ -26,7 +26,7 @@ const reducer = (state, action) => {
   case UPDATE_RECIPES:
     return {
       ...state,
-      recipes: [...action.recipes],
+      recipes: [...state.recipes],
       loading: false
     };
 
