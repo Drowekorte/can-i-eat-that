@@ -3,12 +3,11 @@ import CheckBox from "./checkboxes";
 import "./searchboxes.css";
 import searchOptions from "./searchoptions.json";
 
-class SearchBoxes extends React.Component {
+class SearchBoxes extends Component {
     state = { searchOptions };
 
   constructSrch = id => {
     // Map this.state.searchOptions for checkboxes to display
-
     // Filter to creat a new array of the selected boxes to add to the search URL
     const searchOptions = this.state.searchOptions.filter(srchOpt => srchOpt.id !== id);
     // Set this.state.searchOptions equal to the new search array
@@ -27,13 +26,12 @@ class SearchBoxes extends React.Component {
     return (
       <div className="Search">
         <h2>Search by Diet and Health Labels</h2>
-
         <ul>
           {this.state.searchOptions.map(srchOpt => (
               <CheckBox
-                key={index}
+                key={srchOpt.id}
                 handleCheckChieldElement={this.handleCheckChieldElement}
-                {...paramBoxes}
+                name={srchOpt.name}
               />
             )
           )}
