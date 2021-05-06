@@ -1,6 +1,8 @@
-import React, { useRef } from 'react';
-import { useStoreContext } from '../../utils/GlobalState';
-import { ADD_RECIPE, LOADING } from '../../utils/actions';
+
+import React, { useRef } from "react";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_FAVORITE, LOADING } from "../../utils/actions";
+
 import SearchBoxes from "../SearchBoxes/searchboxes.js";
 import API from '../../utils/API';
 import './style.css';
@@ -9,7 +11,7 @@ function SearchRecipesForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
-  const [state, dispatch] = useStoreContext();
+  const {state, dispatch} = useStoreContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ function SearchRecipesForm() {
     })
       .then((result) => {
         dispatch({
-          type: ADD_RECIPE,
+          type: ADD_FAVORITE,
           recipe: result.data,
         });
       })
@@ -48,7 +50,7 @@ function SearchRecipesForm() {
           <button
             className="submit"
             //className="btn btn-success mt-3 mb-5"
-            disabled={state.loading}
+            // disabled={state.loading}
             type="submit"
           >
             Search

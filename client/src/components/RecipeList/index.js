@@ -7,7 +7,7 @@ import { REMOVE_RECIPE, UPDATE_RECIPES, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 
 function RecipesList() {
-  const [state, dispatch] = useStoreContext();
+  const [state, dispatch] =  useStoreContext();
 
   const removeRecipe = id => {
     API.deleteRecipe(id)
