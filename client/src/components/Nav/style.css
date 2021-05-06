@@ -9,14 +9,15 @@
     padding: 1px;
     margin: auto;
 }
-.login {
+.navclick {
     color:black;
     margin: 1px;
     padding: 3px;
     font-size: 25px;
 }
-.login:hover {
-    background-color:#FCC119;    
+.navclick:hover {
+    background-color:#FCC119; 
+    border-radius: 15px;   
 }
 .home {
     color:black;
