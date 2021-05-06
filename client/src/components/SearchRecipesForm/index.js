@@ -11,7 +11,7 @@ function SearchRecipesForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
-  const {state, dispatch} = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,11 +38,11 @@ function SearchRecipesForm() {
       <div  className="search">
       <h1>Can I Eat That?</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <label htmlFor="title">Search by Keywork:</label>
+        <label htmlFor="title">Search by Keyword:</label>
         <input
           className="form-control mb-5"
           ref={titleRef}
-          id="keyword"
+          id="queryTerm"
         />
         <label htmlFor="body">Search by Diet and Health Labels</label>
         <SearchBoxes />
@@ -50,7 +50,7 @@ function SearchRecipesForm() {
           <button
             className="submit"
             //className="btn btn-success mt-3 mb-5"
-            // disabled={state.loading}
+            disabled={state.loading}
             type="submit"
           >
             Search
