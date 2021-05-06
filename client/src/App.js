@@ -52,8 +52,6 @@ function App() {
     })();
   });
 
-  const { token, setToken } = useToken();
-
   function Login() {
     const loginWithGoogle = () => {
       const provider = new firebase.auth.GoogleAuthProvider();
@@ -76,7 +74,7 @@ function App() {
         <StoreProvider>
           <Nav name={name} />
           <Switch>
-            <Route exact path="/" component={() => <Home name={name} />} />
+            {/* <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
 
             <Route exact path="/recipes/:id" component={Detail} />
@@ -85,7 +83,7 @@ function App() {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/favorites" component={FavoritesList} />
             <Route exact path="/login-signup" component={LoginSignup} />
-            <Route component={NoMatch} />
+            <Route component={NoMatch} /> */}
           </Switch>
         </StoreProvider>
 

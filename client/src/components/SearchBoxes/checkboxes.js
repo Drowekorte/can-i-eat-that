@@ -4,7 +4,6 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import InputGroup from "react-bootstrap/InputGroup";
 
 function CheckBox(props) {
-  console.log(props.tooltip);
   return (
     <div>
       <li>

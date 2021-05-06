@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
+// import CreatePostForm from "../components/CreatePostForm";
 import SearchRecipesForm from "../components/SearchRecipesForm";
 import RecipeList from "../components/RecipeList";
 
