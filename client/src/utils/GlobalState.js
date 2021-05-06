@@ -22,12 +22,12 @@ const reducer = (state, action) => {
         loading: false,
       };
 
-    case UPDATE_RECIPES:
-      return {
-        ...state,
-        recipes: [...state.recipes],
-        loading: false,
-      };
+  case UPDATE_RECIPES:
+    return {
+      ...state,
+      recipes: [...state.recipes],
+      loading: false
+    };
 
     case REMOVE_RECIPE:
       return {
