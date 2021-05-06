@@ -6,9 +6,7 @@ import "./style.css";
 async function loginUser(credentials) {
     return fetch("/api/user/login", {
         method: "POST",
-
         headers: { "Content-type": "application/json" },
-
         credentials: "include",
         body: JSON.stringify(credentials)
     })
