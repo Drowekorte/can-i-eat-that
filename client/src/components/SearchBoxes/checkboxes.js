@@ -1,17 +1,17 @@
 import React from "react";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import InputGroup from "react-bootstrap/InputGroup";
+// import InputGroup from "react-bootstrap/InputGroup";
 
 function CheckBox(props) {
   return (
     <div>
       <li>
-        <InputGroup className="mb-3">
+        {/* <InputGroup className="mb-3">
           <InputGroup.Prepend>
             <InputGroup.Checkbox aria-label={props.tooltip} />
           </InputGroup.Prepend>
-        </InputGroup>
+        </InputGroup> */}
         <OverlayTrigger
           key="bottom"
           placement="bottom"

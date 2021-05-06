@@ -10,7 +10,6 @@ import FavoritesList from "./pages/FavoritesList";
 import Dashboard from "./components/Dashboard";
 import Preferences from "./components/Preferences";
 import LoginSignup from "./pages/LoginSignup";
-import useToken from "./utils/useToken";
 import PrivateRoute from "./utils/PrivateRoute";
 import firebase from "firebase/app";
 import "firebase/firestore";
@@ -68,33 +67,54 @@ function App() {
     );
   }
 
-  return (
-    <Router>
-      <div className="App">
-        <StoreProvider>
-          <Nav name={name} />
-          <Switch>
-            <Route exact path="/" component={() => <Home name={name} />} />
-            <Route exact path="/home" component={Home} />
+  const [searchTerm, setSearchTerm] = useState("");
 
-            <Route exact path="/recipes/:id" component={Detail} />
+  useEffect(() => {
 
-            <PrivateRoute exact path="/preferences" component={Preferences} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/favorites" component={FavoritesList} />
-            <Route exact path="/login-signup" component={LoginSignup} />
-            <Route component={NoMatch} />
-          </Switch>
-        </StoreProvider>
 
-        <header className="App-header">
-          <Logout />
-        </header>
+    const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
+    const APIID = "46239d36";
 
-        <section>{user ? <Home /> : <Login />}</section>
-      </div>
-    </Router>
-  );
+    const getRecipes = async () => {
+      // fetch
+      const result = await fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=${APIID}&app_key=${APIKEY}&from=0&to=10`)
+
+      const data = await result.json();
+      console.log(data)
+    }
+    getRecipes();
+    }, [searchTerm])
+
+
+
+
+return (
+  <Router>
+    <div className="App">
+      <StoreProvider>
+        <Nav name={name} />
+        <Switch>
+          <Route exact path="/" component={() => <Home name={name} />} />
+          <Route exact path="/home" component={Home} />
+
+          <Route exact path="/recipes/:id" component={Detail} />
+
+          <PrivateRoute exact path="/preferences" component={Preferences} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/favorites" component={FavoritesList} />
+          <Route exact path="/login-signup" component={LoginSignup} />
+          <Route component={NoMatch} />
+        </Switch>
+      </StoreProvider>
+
+      <header className="App-header">
+        <Logout />
+      </header>
+
+      <section>{user ? <Home /> : <Login />}</section>
+    </div>
+  </Router>
+);
 }
 
 export default App;
