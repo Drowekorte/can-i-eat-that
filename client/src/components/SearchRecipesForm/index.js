@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_RECIPE, LOADING } from "../../utils/actions";
+import React, { useRef } from 'react';
+import { useStoreContext } from '../../utils/GlobalState';
+import { ADD_RECIPE, LOADING } from '../../utils/actions';
 import SearchBoxes from "../SearchBoxes/searchboxes.js";
-import API from "../../utils/API";
-import "./style.css";
+import API from '../../utils/API';
+import './style.css';
 
 function SearchRecipesForm() {
   const titleRef = useRef();
@@ -33,13 +33,17 @@ function SearchRecipesForm() {
 
   return (
     <div>
-      <div className="search">
-        <h1>Can I Eat That?</h1>
-        <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-          <label htmlFor="title">Search by Keywork:</label>
-          <input className="form-control mb-5" ref={titleRef} id="keyword" />
-          <label htmlFor="body">Search by Diet and Health Labels</label>
-          <SearchBoxes />
+      <div  className="search">
+      <h1>Can I Eat That?</h1>
+      <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
+        <label htmlFor="title">Search by Keywork:</label>
+        <input
+          className="form-control mb-5"
+          ref={titleRef}
+          id="keyword"
+        />
+        <label htmlFor="body">Search by Diet and Health Labels</label>
+        <SearchBoxes />
 
           <button
             className="submit"
