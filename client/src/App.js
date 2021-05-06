@@ -17,7 +17,7 @@ import "firebase/firestore";
 import "firebase/auth";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
+// import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDbmkv3v6WdlJ5OdHuBvLLRLFROcrVth-k",
@@ -71,9 +71,9 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="App">
-        <StoreProvider>
+    <StoreProvider>
+      <Router>
+        <div className="App">
           <Nav name={name} />
           <Switch>
             <Route exact path="/" component={() => <Home name={name} />} />
@@ -87,15 +87,15 @@ function App() {
             <Route exact path="/login-signup" component={LoginSignup} />
             <Route component={NoMatch} />
           </Switch>
-        </StoreProvider>
 
-        <header className="App-header">
-          <Logout />
-        </header>
+          <header className="App-header">
+            <Logout />
+          </header>
 
-        <section>{user ? <Home /> : <Login />}</section>
-      </div>
-    </Router>
+          <section>{user ? <Home /> : <Login />}</section>
+        </div>
+      </Router>
+    </StoreProvider>
   );
 }
 

@@ -1,7 +1,7 @@
 export const UPDATE_RECIPES = "UPDATE_RECIPE";
 export const REMOVE_RECIPE = "REMOVE_RECIPE";
 export const SET_CURRENT_RECIPES = "SET_CURRENT_RECIPES";
-export const ADD_RECIPE = "ADD_RECIPE";
+// export const ADD_RECIPE = "ADD_RECIPE";
 export const LOADING = "LOADING";
 
 export const ADD_FAVORITE = "ADD_FAVORITE";

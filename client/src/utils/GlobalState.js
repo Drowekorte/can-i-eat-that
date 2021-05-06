@@ -3,7 +3,6 @@ import {
   SET_CURRENT_RECIPES,
   REMOVE_RECIPE,
   UPDATE_RECIPES,
-  ADD_RECIPE,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -23,19 +22,12 @@ const reducer = (state, action) => {
         loading: false,
       };
 
-    case UPDATE_RECIPES:
-      return {
-        ...state,
-        recipes: [...state.recipes],
-        loading: false,
-      };
-
-    case ADD_RECIPE:
-      return {
-        ...state,
-        recipes: [action.recipe, ...state.recipes],
-        loading: false,
-      };
+  case UPDATE_RECIPES:
+    return {
+      ...state,
+      recipes: [...state.recipes],
+      loading: false
+    };
 
     case REMOVE_RECIPE:
       return {

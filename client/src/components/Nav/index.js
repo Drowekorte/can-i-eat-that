@@ -56,7 +56,7 @@ function Nav(props) {
       
       <nav className="">
         <div className="favorites">
-          <Link to="/favorites" className="favorites">Favorites</Link>
+          <Link to="/FavoritesList" className="favorites">Favorites</Link>
           <div>
 
           </div>
