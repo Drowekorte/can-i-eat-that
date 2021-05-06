@@ -32,9 +32,9 @@ function RecipesList() {
       .catch(err => console.log(err));
   };
 
-  useEffect(() => {
-    getRecipes();
-  }, []);
+  // useEffect(() => {
+  //   getRecipes();
+  // }, []);
 
   return (
     <div>
