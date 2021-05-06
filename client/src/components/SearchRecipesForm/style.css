@@ -5,6 +5,7 @@
 .submit {
     background-color: #99f03c;
     border-radius: 25px;
+    color: black;
 }
 .submit:hover {
     background-color: #16755B;
