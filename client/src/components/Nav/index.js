@@ -16,30 +16,30 @@ function Nav(props) {
 
   return (
     <nav className="navbar">
-      <a className="eat" href="/">
-        Can I Eat That?</a> 
+      <h1 className="eat" href="/">
+        Can I Eat That?</h1> 
               
-        <a className="your"> Your personal recipe finder</a>
+        <h1 className="your"> Your personal recipe finder</h1>
        
       <nav className="">
-        <div className="home">
-          <Link to="/" className="home">Home</Link>
+        <div className="navclick">
+          <Link to="/" className="navclick">Home</Link>
           <div>
           </div>
         </div>
       </nav>
       
       <nav className="">
-        <div className="favorites">
-          <Link to="/FavoritesList" className="favorites">Favorites</Link>
+        <div className="navclick">
+          <Link to="/FavoritesList" className="navclick">Favorites</Link>
           <div>
 
           </div>
         </div>
       </nav>
       <nav className="">
-        <div className="login">
-          <Link to="/login-signup" className="login">Login</Link>
+        <div className="navclick">
+          <Link to="/login-signup" className="navclick">Login</Link>
           <div>
 
           </div>
