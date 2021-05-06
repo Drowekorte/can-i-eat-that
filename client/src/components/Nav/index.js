@@ -12,31 +12,6 @@ function Nav(props) {
     });
        
 }
-
-
-  // let menu;
-
-  // if (props.name === '') {
-  //   menu = (
-  //     <ul className="">
-  //       <li className="">
-  //         <Link to="/login" className="">Login</Link>
-  //       </li>
-  //       <li className="">
-  //         <Link to="/signup" className="">Signup</Link>
-  //       </li>
-  //     </ul>
-  //   )
-  // } else {
-  //   menu = (
-  //     <ul className="">
-  //       <li className="">
-  //         <Link to="/login" className="" onClick={logout}>Logout</Link>
-  //       </li>
-  //     </ul>
-  //   )
-
-  // }
   const [store] = useStoreContext();
 
   return (

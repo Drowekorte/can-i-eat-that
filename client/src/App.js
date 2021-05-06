@@ -37,8 +37,7 @@ function App() {
   const [user] = useAuthState(auth);
 
   const [name, setName] = useState();
-  useEffect(() => {
-    (async () => {
+  useEffect(() => {(async () => {
       const response = await fetch("/home", {
         headers: {
           "Content-type": "application/json",
