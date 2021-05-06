@@ -87,7 +87,9 @@ const StoreProvider = ({ value = [], ...props }) => {
 };
 
 const useStoreContext = () => {
-  return useContext(StoreContext);
+  const store = useContext(StoreContext);
+  console.log(store);
+  return store;
 };
 
 export { StoreProvider, useStoreContext };

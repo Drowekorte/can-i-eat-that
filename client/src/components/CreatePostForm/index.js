@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_FAVORITE, LOADING } from '../../utils/actions';
 import API from '../../utils/API';
-import './style.css';
+// import './style.css';
 
-function SearchRecipesForm() {
+function CreatePostForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
@@ -13,7 +13,7 @@ function SearchRecipesForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: LOADING });
-    API.saveRecipe({
+    API.saveRecipes({
       title: titleRef.current.value,
       body: bodyRef.current.value,
       author: authorRef.current.value,
@@ -72,4 +72,4 @@ function SearchRecipesForm() {
   );
 }
 
-export default SearchRecipesForm;
+export default CreatePostForm;
