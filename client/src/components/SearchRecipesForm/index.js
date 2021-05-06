@@ -9,7 +9,9 @@ function SearchRecipesForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
-  const [state, dispatch] = useStoreContext();
+  const state = useStoreContext();
+  const dispatch = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
