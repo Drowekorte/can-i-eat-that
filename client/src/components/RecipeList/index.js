@@ -7,9 +7,9 @@ import { REMOVE_RECIPE, UPDATE_RECIPES, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 
 function RecipesList() {
-  const state = useStoreContext();
-  const dispatch = useStoreContext();
-  // const [state, dispatch] = useStoreContext();
+  // const state = useStoreContext();
+  // const dispatch = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
   const removeRecipe = id => {
     API.deleteRecipe(id)
@@ -42,7 +42,7 @@ function RecipesList() {
     <div>
       <h1></h1>
       <h3 className="mb-5 mt-5"></h3>
-      {state.recipes.length ? (
+      {state.recipes ? (
         <List>
           {state.recipes.map(recipe => (
             <ListItem key={recipe._id}>
