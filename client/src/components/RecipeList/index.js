@@ -56,9 +56,9 @@ function RecipesList() {
       ) : (
         <h3></h3>
       )}
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <Link to="favorites">View favorites</Link>
-      </div>
+      </div> */}
     </div>
   );
 }
