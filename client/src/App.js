@@ -73,12 +73,6 @@ return (
           <Route component={NoMatch} />
         </Switch>
       </StoreProvider>
-
-      <header className="App-header">
-        <Logout />
-      </header>
-
-      <section>{user ? <Home /> : <Login />}</section>
     </div>
   </Router>
 );

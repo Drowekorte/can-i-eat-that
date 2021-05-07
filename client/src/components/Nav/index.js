@@ -15,13 +15,13 @@ function Nav(props) {
 
   return (
     <div>
-    <header className="navbar">
-      <div className="align-center">
-      <a href="/">
-        <img src="./imgs/Can_I_Eat_That_logo.png" className="logo"/>
-      </a>
-      <h1> Your personal recipe finder</h1>
-      </div>
+      <header className="navbar">
+        <div className="align-center">
+          <a href="/">
+            <img src="./imgs/Can_I_Eat_That_logo.png" className="logo" />
+          </a>
+          <h1> Your personal recipe finder</h1>
+        </div>
       </header>
 
       <nav className="navbtns navbar align-center">
@@ -42,7 +42,7 @@ function Nav(props) {
         </div>
       </nav>
       {/* {store.loading ? <a className="navbar-brand ml-auto">Loading...</a> : <></>} */}
-      </div>
+    </div>
   );
 }
 

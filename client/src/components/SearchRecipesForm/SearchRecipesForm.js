@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_FAVORITE, LOADING } from "../../utils/actions";
 import SearchBoxes from "../SearchBoxes/searchboxes.js";
-import API from "../../utils/API";
 import "./style.css";
 
 function SearchRecipesForm({ setSearchTerm }) {
@@ -12,30 +9,7 @@ function SearchRecipesForm({ setSearchTerm }) {
     event.preventDefault();
     setSearchTerm(string);
   };
-  // const titleRef = useRef();
-  // const bodyRef = useRef();
-  // const authorRef = useRef();
-  // const [state, dispatch] = useStoreContext();
 
-  // const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     dispatch({ type: LOADING });
-  //     API.saveRecipes({
-  //         title: titleRef.current.value,
-  //         body: bodyRef.current.value,
-  //         author: authorRef.current.value,
-  //     })
-  //         .then((result) => {
-  //             dispatch({
-  //                 type: ADD_FAVORITE,
-  //                 recipe: result.data,
-  //             });
-  //         })
-  //         .catch((err) => console.log(err));
-
-  //     titleRef.current.value = "";
-  //     bodyRef.current.value = "";
-  // };
 
   return (
     <div>
