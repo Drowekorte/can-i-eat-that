@@ -66,23 +66,23 @@ function App() {
     );
   }
 
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
+  // useEffect(() => {
 
 
-    const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
-    const APIID = "46239d36";
+  //   const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
+  //   const APIID = "46239d36";
 
-    const getRecipes = async () => {
-      // fetch
-      const result = await fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=${APIID}&app_key=${APIKEY}&from=0&to=10`)
+  //   const getRecipes = async () => {
+  //     // fetch
+  //     const result = await fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=${APIID}&app_key=${APIKEY}&from=${pagination}&to=${pagination+10}`)
 
-      const data = await result.json();
-      console.log(data)
-    }
-    getRecipes();
-    }, [searchTerm])
+  //     const data = await result.json();
+  //     console.log(data)
+  //   }
+  //   getRecipes();
+  //   }, [searchTerm])
 
 
 
