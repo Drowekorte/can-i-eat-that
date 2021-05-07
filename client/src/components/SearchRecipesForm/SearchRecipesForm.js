@@ -10,6 +10,15 @@ function SearchRecipesForm({ setSearchTerm }) {
     setSearchTerm(string);
   };
 
+  addToFavorites = async(recipeName => {
+    currentUser = await firebase.auth().currentUser
+
+    var databaseRef = await firebase.database().ref(currentUser.uid).child('favorites').push()
+
+    databaseRef.set({
+      'name': recipeName
+    })
+  })
 
   return (
     <div>
