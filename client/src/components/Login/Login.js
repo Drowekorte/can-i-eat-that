@@ -1,31 +1,24 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
+import { auth } from "../../config/firebase";
 import PropTypes from "prop-types";
 import "./style.css";
 
-async function loginUser(credentials) {
-  return fetch("/api/user/login", {
-    method: "POST",
-    headers: { "Content-type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
-}
-
 export default function Login({ setToken }) {
-  const [username, setUserUsername] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [redirect, setRedirect] = useState(false);
+  const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const token = await loginUser({
-      username,
-      password,
-    });
-    // setToken(token);
-    setRedirect(true);
-  };
+    try {
+      const { user } = await auth.signInWithEmailAndPassword(email, password);
+      console.log(user);
+      history.replace("/");
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   if (redirect) {
     return <Redirect to="/home" />;

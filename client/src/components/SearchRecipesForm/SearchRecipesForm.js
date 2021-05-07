@@ -10,15 +10,6 @@ function SearchRecipesForm({ setSearchTerm }) {
     setSearchTerm(string);
   };
 
-  addToFavorites = async(recipeName => {
-    currentUser = await firebase.auth().currentUser
-
-    var databaseRef = await firebase.database().ref(currentUser.uid).child('favorites').push()
-
-    databaseRef.set({
-      'name': recipeName
-    })
-  })
 
   return (
     <div>
@@ -39,7 +30,6 @@ function SearchRecipesForm({ setSearchTerm }) {
 
           <button
             className="submit"
-            className="btn btn-success mt-3 mb-5"
             // disabled={state.loading}
             type="submit"
             onClick={(e) => onSubmit(e)}
