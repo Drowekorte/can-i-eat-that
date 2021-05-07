@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
@@ -20,49 +19,13 @@ function App() {
   // Firebase Auth
   const [user] = useAuthState(auth);
 
-  const [name, setName] = useState();
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("/home", {
-        headers: {
-          "Content-type": "application/json",
-          Accept: "application/json",
-        },
-      });
-
-      const content = await response.json();
-
-      setName(content.name);
-    })();
-  });
-
-  function Login() {
-    const loginWithGoogle = () => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider);
-    };
-    return <button onClick={loginWithGoogle}>Sign in with Google</button>;
-  }
-
-  function Logout() {
-    return (
-      auth.currentUser && (
-        <button onClick={() => auth.logout()}>Sign Out</button>
-      )
-    );
-  }
-
   return (
     <Router>
       <div className="App">
         <StoreProvider>
-          <Nav name={name} />
-          <header className="App-header">
-            <Logout />
-          </header>
-          <section>{user ? <></> : <Login />}</section>
+          <Nav />
           <Switch>
-            <Route exact path="/" component={() => <Home name={name} />} />
+            <Route exact path="/" component={() => <Home user={user} />} />
             <Route exact path="/home" component={Home} />
 
             <Route exact path="/recipes/:id" component={Detail} />
