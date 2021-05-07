@@ -16,7 +16,7 @@ import "firebase/firestore";
 import "firebase/auth";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-// import { useCollectionData } from "react-firebase-hooks/firestore";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDbmkv3v6WdlJ5OdHuBvLLRLFROcrVth-k",
@@ -36,8 +36,7 @@ function App() {
   const [user] = useAuthState(auth);
 
   const [name, setName] = useState();
-  useEffect(() => {
-    (async () => {
+  useEffect(() => {(async () => {
       const response = await fetch("/home", {
         headers: {
           "Content-type": "application/json",
