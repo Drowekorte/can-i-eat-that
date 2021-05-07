@@ -5,7 +5,7 @@ import SearchRecipesForm from "../components/SearchRecipesForm";
 import RecipeList from "../components/RecipeList";
 
 const Home = (props) => {
-
+  console.log(props);
   // const [searchTerm, setSearchTerm] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [pagination, setPagination] = useState(0);
@@ -19,9 +19,8 @@ const Home = (props) => {
   const prevSearch = prevSearchIdRef.current;
 
   useEffect(() => {
-
-    const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
-    const APIID = "46239d36";
+    const APIKEY = process.env.EDAMAM_API_KEY;
+    const APIID = process.env.EDAMAM_API_ID;
 
     var currentPagination = pagination;
 
@@ -32,34 +31,41 @@ const Home = (props) => {
 
     const getRecipes = async () => {
       // fetch
-      const result = await fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=${APIID}&app_key=${APIKEY}&from=${currentPagination}&to=${currentPagination + 10}`)
+      const result = await fetch(
+        `https://api.edamam.com/search?q=${searchTerm}&app_id=${APIID}&app_key=${APIKEY}&from=${currentPagination}&to=${
+          currentPagination + 10
+        }`
+      );
 
       const data = await result.json();
       if (data.hits.length > 0) {
         setResult(data.hits);
-        
       }
-console.log(data)
+      console.log(data);
     };
-    
-    if(searchTerm  && (searchTerm !== prevSearch || pagination>0 )){
+
+    if (searchTerm && (searchTerm !== prevSearch || pagination > 0)) {
       getRecipes();
     }
-  }, [searchTerm, pagination])
+  }, [searchTerm, pagination]);
 
   return (
     <Container fluid>
-      <div>{props.name ? 'Welcome back' + props.name : 'You are not logged in'}</div>
+      <div>{props.user ? "Welcome back" : "You are not logged in"}</div>
       {pagination}
       {searchTerm}
-      <Row>
-        <Col size="md-6">
+      <div className="container">
+        <div className="halfsies">
           <SearchRecipesForm setSearchTerm={setSearchTerm} />
-        </Col>
-        <Col size="md-6 sm-12">
-          <RecipeList recipes={result} pagination={pagination} setPagination={setPagination} />
-        </Col>
-      </Row>
+        </div>
+        <div className="halfsies">
+          <RecipeList
+            recipes={result}
+            pagination={pagination}
+            setPagination={setPagination}
+          />
+        </div>
+      </div>
     </Container>
   );
 };

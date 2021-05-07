@@ -5,19 +5,8 @@ import { auth } from "../../config/firebase";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function Nav(props) {
-  const logout = async () => {
-    await fetch("/api/logout", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      credentials: "include",
-    });
-  };
-
-  const [store] = useStoreContext();
-
+function Nav() {
   const [user] = useAuthState(auth);
-  console.log(user);
 
   return (
     <nav className="navbar">
@@ -45,9 +34,14 @@ function Nav(props) {
       </nav>
       <nav className="">
         <div className="navclick">
-          <Link to="/login-signup" className="navclick">
-            Login
-          </Link>
+          {auth.currentUser ? (
+            <Link>Logout</Link>
+          ) : (
+            <Link to="/login-signup" className="navclick">
+              Login
+            </Link>
+          )}
+
           <div></div>
         </div>
       </nav>

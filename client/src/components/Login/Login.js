@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import PropTypes from "prop-types";
 import { auth } from "../../config/firebase";
+import PropTypes from "prop-types";
 import "./style.css";
 
-export default function Login() {
-  const history = useHistory();
+export default function Login({ setToken }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
     try {
       const { user } = await auth.signInWithEmailAndPassword(email, password);
@@ -18,17 +18,19 @@ export default function Login() {
     } catch (err) {
       console.log(err);
     }
-  };
+  }
 
   return (
-    <h1 className="log-in">
-      <div className="login-wrapper">
-        <h1>Please Log In</h1>
-        <form onSubmit={handleSubmit}>
+    <div className="log-in">
+      <h2>Please Log In</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
           <label>
             <p>Username</p>
             <input type="text" onChange={(e) => setEmail(e.target.value)} />
           </label>
+        </div>
+        <div>
           <label>
             <p>Password</p>
             <input
@@ -36,14 +38,14 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <div>
-            <button type="submit" className="submit">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </h1>
+        </div>
+        <div>
+          <button type="submit" className="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
