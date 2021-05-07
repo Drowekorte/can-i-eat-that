@@ -52,10 +52,10 @@ console.log(data)
       {pagination}
       {searchTerm}
       <div className="container" >
-        <div className="container" >
+        <div className="halfsies" >
           <SearchRecipesForm setSearchTerm={setSearchTerm} />
         </div>
-        <div className="container" >
+        <div className="halfsies" >
           <RecipeList recipes={result} pagination={pagination} setPagination={setPagination} />
         </div>
       </div>
