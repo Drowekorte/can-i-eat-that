@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { history, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { auth } from "../../config/firebase";
-
-import PropTypes from "prop-types";
 
 export default function Signup() {
   const [email, setUserEmail] = useState();
@@ -25,7 +23,7 @@ export default function Signup() {
 
   return (
     <div className="log-in">
-      <h1>Please Signup</h1>
+      <h2>Don't have an account? Signup!</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -51,7 +49,3 @@ export default function Signup() {
     </div>
   );
 }
-
-Signup.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
