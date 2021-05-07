@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function RecipesList() {
   // const [state, dispatch] =  useStoreContext();
 
-  const removeRecipe = id => {
+  const removeRecipe = (id) => {
     // API.deleteRecipe(id)
     //   .then(() => {
     //     dispatch({
@@ -58,7 +58,7 @@ function RecipesList() {
       )} */}
       <div className="mt-5">
         <Link to="favorites">View favorites</Link>
-      </div> */}
+      </div>
     </div>
   );
 }
