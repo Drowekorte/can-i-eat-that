@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Row, Container } from "../components/Grid";
+import { Container } from "../components/Grid";
 // import CreatePostForm from "../components/CreatePostForm";
 import SearchRecipesForm from "../components/SearchRecipesForm";
 import RecipeList from "../components/RecipeList";
@@ -10,10 +10,8 @@ const Home = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-
-
-    const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
-    const APIID = "46239d36";
+    const APIKEY = process.env.EDAMAM_API_KEY;
+    const APIID = process.env.EDAMAM_API_ID;
 
     const getRecipes = async () => {
       // fetch
@@ -28,14 +26,14 @@ const Home = (props) => {
 return (
   <Container fluid>
     <div>{props.name ? 'Welcome back' + props.name : 'You are not logged in'}</div>
-    <Row>
-      <Col size="md-6">
+    <div className="container" >
+      <div className="halfsies">
         <SearchRecipesForm setSearchTerm={setSearchTerm}/>
-      </Col>
-      <Col size="md-6 sm-12">
+      </div>
+      <div className="halfsies">
         <RecipeList />
-      </Col>
-    </Row>
+      </div>
+    </div>
   </Container>
 );
 };

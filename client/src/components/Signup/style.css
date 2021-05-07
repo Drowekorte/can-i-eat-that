@@ -1,15 +1,15 @@
 .flex-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 35px;
-    padding: 3px;
-    margin: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: x-large;
+  padding: 3px;
+  margin: 5px;
 }
 .flex-container > div {
-    width: 100px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
+  width: 90%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 }

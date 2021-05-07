@@ -62,16 +62,10 @@ THEN I am signed out of the site  <br />
   
 ## Technology Used
  
-JavaScript
-Node.js 
-Express.js
-Sequelize 
-MySQL2
-Jaws DB
-Bcrypt
-ESLint
-Dotenv
-Bulma
+- FERN (Firebase User Auth, Express.js, React.js, Node.js)
+- dotEnv
+- Bootstrap
+- Heroku
   
 ## Mockups and Screenshots
 ### Wireframes
