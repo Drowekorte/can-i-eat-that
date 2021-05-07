@@ -14,8 +14,6 @@ import PrivateRoute from "./utils/PrivateRoute";
 import firebase from "firebase/app";
 import { auth } from "./config/firebase";
 
-
-
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function App() {
@@ -54,12 +52,15 @@ function App() {
     );
   }
 
-
 return (
   <Router>
     <div className="App">
       <StoreProvider>
         <Nav name={name} />
+      <header className="App-header">
+          <Logout />
+        </header>
+        <section>{user ? <></> : <Login />}</section>
         <Switch>
           <Route exact path="/" component={() => <Home name={name} />} />
           <Route exact path="/home" component={Home} />
