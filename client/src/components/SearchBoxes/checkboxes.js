@@ -5,7 +5,6 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 function CheckBox(props) {
   return (
     <div>
-      <li>
         <OverlayTrigger
           key="bottom"
           placement="bottom"
@@ -23,11 +22,10 @@ function CheckBox(props) {
               checked={props.isChecked}
               value={props.value}
               prefix={props.prefix}
-            />
+            />{" "}
             {props.name}
           </div>
         </OverlayTrigger>
-      </li>
     </div>
   );
 }
