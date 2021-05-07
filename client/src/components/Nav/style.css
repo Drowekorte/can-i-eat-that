@@ -1,10 +1,18 @@
 .navbar {
     background-color: #fced08;
-    padding: 30px;
-} 
+    padding: 1rem;
+}
+
+.align-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.logo{
+    width: 100%;
+}
 .eat {
     color: black;
-    font-size: 110px;
     text-align: center;
     padding: 1px;
     margin: auto;
@@ -13,26 +21,42 @@
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 25px;
+    font-size: x-large;
+    flex-grow: 1;
+    flex-direction: row;
+    max-width: 30%;
+
+
 }
 .navclick:hover {
     background-color:#FCC119; 
-    border-radius: 15px;   
+    border-radius: 15px;
+    text-decoration: none;
+
 }
-.home {
-    color:black;
-    margin: 1px;
-    padding: 3px;
-    font-size: 25px;
+.halfsies {
+    min-width: 45%;
 }
-.home:hover {
-    background-color: #FCC119;
+@media (max-width: 767.98px){
+    .halfsies {
+    min-width: 100%;
 }
+}
+.container {
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+
+    margin: 0 auto;
+}
+
 .signup {
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 25px;
+    font-size: x-large;
 }
 .signup:hover {
     background-color: #FCC119;
@@ -41,7 +65,7 @@
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 25px;
+    font-size: x-large;
 }
 .favorites:hover {
     background-color:#FCC119;
@@ -49,6 +73,23 @@
 .your {
     color:black;
     padding: 1px;
-    font-size: 60px;
+    font-size: xx-large;
     margin: auto;
+}
+
+.navbtns {
+    /* max-width: 30%; */
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: x-large;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: xx-large;
 }

@@ -52,24 +52,6 @@ function App() {
     );
   }
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
-    const APIID = "46239d36";
-
-    const getRecipes = async () => {
-      // fetch
-      const result = await fetch(
-        `https://api.edamam.com/search?q=${searchTerm}&app_id=${APIID}&app_key=${APIKEY}&from=0&to=10`
-      );
-
-      const data = await result.json();
-      console.log(data);
-    };
-    getRecipes();
-  }, [searchTerm]);
-
   return (
     <Router>
       <div className="App">

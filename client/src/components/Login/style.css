@@ -1,8 +1,11 @@
 .log-in {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    font-size: 35px;
+    font-size: x-large;
     padding: 3px;
-    margin: 5px;
+    margin: 2rem;
+    width: 90%;
 }
 .submit {
     background-color: #99f03c;
@@ -12,4 +15,5 @@
 }
 .submit:hover {
     background-color: #16755B;
+    color: #fff;
 }
