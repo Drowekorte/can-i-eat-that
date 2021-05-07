@@ -19,9 +19,8 @@ const Home = (props) => {
   const prevSearch = prevSearchIdRef.current;
 
   useEffect(() => {
-
-    const APIKEY = "1a69c78b7e77773efa62829cc3f05013";
-    const APIID = "46239d36";
+    const APIKEY = process.env.EDAMAM_API_KEY;
+    const APIID = process.env.EDAMAM_API_ID;
 
     var currentPagination = pagination;
 
@@ -52,14 +51,14 @@ console.log(data)
       <div>{props.name ? 'Welcome back' + props.name : 'You are not logged in'}</div>
       {pagination}
       {searchTerm}
-      <Row>
-        <Col size="md-6">
+      <div className="container" >
+        <div className="halfsies" >
           <SearchRecipesForm setSearchTerm={setSearchTerm} />
-        </Col>
-        <Col size="md-6 sm-12">
+        </div>
+        <div className="halfsies" >
           <RecipeList recipes={result} pagination={pagination} setPagination={setPagination} />
-        </Col>
-      </Row>
+        </div>
+      </div>
     </Container>
   );
 };

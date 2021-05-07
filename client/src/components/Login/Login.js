@@ -1,34 +1,50 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router";
 import PropTypes from "prop-types";
-import { auth } from "../../config/firebase";
 import "./style.css";
 
-export default function Login() {
-  const history = useHistory();
-  const [email, setEmail] = useState();
+async function loginUser(credentials) {
+  return fetch("/api/user/login", {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    credentials: "include",
+    body: JSON.stringify(credentials),
+  }).then((data) => data.json());
+}
+
+export default function Login({ setToken }) {
+  const [username, setUserUsername] = useState();
   const [password, setPassword] = useState();
+  const [redirect, setRedirect] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const { user } = await auth.signInWithEmailAndPassword(email, password);
-      console.log(user);
-      history.replace("/");
-    } catch (err) {
-      console.log(err);
-    }
+    const token = await loginUser({
+      username,
+      password,
+    });
+    // setToken(token);
+    setRedirect(true);
   };
 
+  if (redirect) {
+    return <Redirect to="/home" />;
+  }
+
   return (
-    <h1 className="log-in">
-      <div className="login-wrapper">
-        <h1>Please Log In</h1>
-        <form onSubmit={handleSubmit}>
+    <div className="log-in">
+      <h2>Please Log In</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
           <label>
             <p>Username</p>
-            <input type="text" onChange={(e) => setEmail(e.target.value)} />
+            <input
+              type="text"
+              onChange={(e) => setUserUsername(e.target.value)}
+            />
           </label>
+        </div>
+        <div>
           <label>
             <p>Password</p>
             <input
@@ -36,14 +52,14 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <div>
-            <button type="submit" className="submit">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </h1>
+        </div>
+        <div>
+          <button type="submit" className="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
