@@ -1,28 +1,29 @@
 .navbar {
     background-color: #fced08;
-    padding: 40px;
+    padding: 30px;
 } 
 .eat {
     color: black;
-    font-size: 70px;
+    font-size: 110px;
     text-align: center;
-    padding: 10px;
+    padding: 1px;
     margin: auto;
 }
-.login {
+.navclick {
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 30px;
+    font-size: 25px;
 }
-.login:hover {
-    background-color:#FCC119;    
+.navclick:hover {
+    background-color:#FCC119; 
+    border-radius: 15px;   
 }
 .home {
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 30px;
+    font-size: 25px;
 }
 .home:hover {
     background-color: #FCC119;
@@ -31,7 +32,7 @@
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 30px;
+    font-size: 25px;
 }
 .signup:hover {
     background-color: #FCC119;
@@ -40,8 +41,14 @@
     color:black;
     margin: 1px;
     padding: 3px;
-    font-size: 30px;
+    font-size: 25px;
 }
 .favorites:hover {
     background-color:#FCC119;
 }    
+.your {
+    color:black;
+    padding: 1px;
+    font-size: 60px;
+    margin: auto;
+}

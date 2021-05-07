@@ -47,7 +47,7 @@ export default function Signup({ setToken }) {
     }
 
     return (
-        <div className="flex-container">
+        <div className="log-in">
             <h1>Please Signup</h1>
             <form onSubmit={handleSubmit}>
                 <div>

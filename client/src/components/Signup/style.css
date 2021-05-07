@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-size: 35px;
+    padding: 3px;
+    margin: 5px;
 }
 .flex-container > div {
     width: 100px;

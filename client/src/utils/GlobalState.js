@@ -3,7 +3,6 @@ import {
   SET_CURRENT_RECIPES,
   REMOVE_RECIPE,
   UPDATE_RECIPES,
-  ADD_RECIPE,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -29,13 +28,6 @@ const reducer = (state, action) => {
       recipes: [...state.recipes],
       loading: false
     };
-
-    case ADD_RECIPE:
-      return {
-        ...state,
-        recipes: [action.recipe, ...state.recipes],
-        loading: false,
-      };
 
     case REMOVE_RECIPE:
       return {
@@ -95,7 +87,9 @@ const StoreProvider = ({ value = [], ...props }) => {
 };
 
 const useStoreContext = () => {
-  return useContext(StoreContext);
+  const store = useContext(StoreContext);
+  console.log(store);
+  return store;
 };
 
 export { StoreProvider, useStoreContext };
