@@ -57,6 +57,10 @@ function App() {
       <div className="App">
         <StoreProvider>
           <Nav name={name} />
+          <header className="App-header">
+            <Logout />
+          </header>
+          <section>{user ? <></> : <Login />}</section>
           <Switch>
             <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
@@ -70,12 +74,6 @@ function App() {
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>
-
-        <header className="App-header">
-          <Logout />
-        </header>
-
-        <section>{user ? <Home /> : <Login />}</section>
       </div>
     </Router>
   );
