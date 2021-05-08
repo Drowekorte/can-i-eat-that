@@ -3,6 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 // import CreatePostForm from "../components/CreatePostForm";
 import SearchRecipesForm from "../components/SearchRecipesForm";
 import RecipeList from "../components/RecipeList";
+require ("dotenv").config();
 
 const Home = (props) => {
   console.log(props);
