@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
-import { ADD_RECIPE, LOADING } from '../../utils/actions';
+import { ADD_FAVORITE, LOADING } from '../../utils/actions';
 import API from '../../utils/API';
-import './style.css';
+// import './style.css';
 
-function SearchRecipesForm() {
+function CreatePostForm() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
@@ -13,14 +13,14 @@ function SearchRecipesForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: LOADING });
-    API.saveRecipe({
+    API.saveRecipes({
       title: titleRef.current.value,
       body: bodyRef.current.value,
       author: authorRef.current.value,
     })
       .then((result) => {
         dispatch({
-          type: ADD_RECIPE,
+          type: ADD_FAVORITE,
           recipe: result.data,
         });
       })
@@ -41,7 +41,7 @@ function SearchRecipesForm() {
       <div  className="search">
       <h1>Can I Eat That?</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <label htmlFor="title">Search by Keywork:</label>
+        <label htmlFor="title">Search by Keyword:</label>
         <input
           className="form-control mb-5"
           ref={titleRef}
@@ -72,4 +72,4 @@ function SearchRecipesForm() {
   );
 }
 
-export default SearchRecipesForm;
+export default CreatePostForm;

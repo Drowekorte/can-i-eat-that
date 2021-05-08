@@ -1,11 +1,37 @@
 .search {
     text-align: center;
-    color:black;    
+    color:black;
+
 }
 .submit {
     background-color: #99f03c;
     border-radius: 25px;
+    color: black;
 }
 .submit:hover {
     background-color: #16755B;
+}
+
+.boxCols {
+    display: flex;
+    max-width: 100%;
+    height: 15rem;
+    flex-flow: column wrap !important;
+    margin: 0 auto;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 5px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: auto;
+    column-count: 3;
+}
+
+.singular {
+    text-align: left;
+    padding-left: 10px;
+    flex-grow: 1;
+    align-self: flex-start;
+    display: inline-block;
+    width: 100%;
 }

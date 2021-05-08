@@ -1,12 +1,10 @@
 import React from "react";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import InputGroup from "react-bootstrap/InputGroup";
 
 function CheckBox(props) {
   return (
     <div>
-      <li>
         <OverlayTrigger
           key="bottom"
           placement="bottom"
@@ -28,7 +26,6 @@ function CheckBox(props) {
             {props.name}
           </div>
         </OverlayTrigger>
-      </li>
     </div>
   );
 }

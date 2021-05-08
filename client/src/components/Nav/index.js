@@ -1,84 +1,48 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { Link } from "react-router-dom";
-import './style.css';
+import "./style.css";
 
 function Nav(props) {
   const logout = async () => {
     await fetch("/api/logout", {
-        method: "POST",
-        headers: {"Content-type": "application/json"},
-        credentials: "include",
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      credentials: "include",
     });
-       
-}
-
-
-  let menu;
-
-  if (props.name === '') {
-    menu = (
-      <ul className="">
-        <li className="">
-          <Link to="/login" className="">Login</Link>
-        </li>
-        <li className="">
-          <Link to="/signup" className="">Signup</Link>
-        </li>
-      </ul>
-    )
-  } else {
-    menu = (
-      <ul className="">
-        <li className="">
-          <Link to="/login" className="" onClick={logout}>Logout</Link>
-        </li>
-      </ul>
-    )
-
-  }
+  };
   const [store] = useStoreContext();
 
   return (
-    <nav className="navbar">
-      <a className="eat" href="/">
-        Can I Eat That?
-      </a>
-        Your personal recipe finder
-      <nav className="">
-        <div className="home">
-          <Link to="/" className="home">Home</Link>
-          <div>
-          </div>
+    <div>
+      <header className="navbar">
+        <div className="align-center">
+          <a href="/">
+            <img src="./imgs/Can_I_Eat_That_logo.png" className="logo" />
+          </a>
+          <h1> Your personal recipe finder</h1>
         </div>
-      </nav>
-      
-      <nav className="">
-        <div className="favorites">
-          <Link to="/login" className="favorites">Favorites</Link>
-          <div>
+      </header>
 
-          </div>
+      <nav className="navbtns navbar align-center">
+        <div className="navclick">
+          <Link to="/" className="navclick">
+            Home
+          </Link>
+        </div>
+        <div className="navclick">
+          <Link to="/FavoritesList" className="navclick">
+            Favorites
+          </Link>
+        </div>
+        <div className="navclick">
+          <Link to="/login-signup" className="navclick">
+            Login
+          </Link>
         </div>
       </nav>
-      <nav className="">
-        <div className="login">
-          <Link to="/login" className="login">Login</Link>
-          <div>
-
-          </div>
-        </div>
-      </nav>
-      <nav className="">
-        <div className="signup">
-          <Link to="/signup" className="signup">Signup</Link>
-          <div>
-
-          </div>
-        </div>
-      </nav>
-      {store.loading ? <a className="navbar-brand ml-auto">Loading...</a> : <></>}
-    </nav>
+      {/* {store.loading ? <a className="navbar-brand ml-auto">Loading...</a> : <></>} */}
+    </div>
   );
 }
 

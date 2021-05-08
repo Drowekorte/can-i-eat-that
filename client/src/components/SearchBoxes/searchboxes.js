@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CheckBox from "./checkboxes";
-import "./searchboxes.css";
 import searchOptions from "./searchoptions.json";
 
 class SearchBoxes extends Component {
@@ -26,19 +25,14 @@ class SearchBoxes extends Component {
 
   render() {
     return (
-      <div>
-      <ul>
+      <div className="singular">
         {this.state.searchOptions.map((srchOpt) => (
           <CheckBox
             key={srchOpt.id}
             name={srchOpt.name}
-            checked={srchOpt.isChecked}
-            value={srchOpt.value}
-            prefix={srchOpt.prefix}
             tooltip={srchOpt.tooltip}
           />
         ))}
-      </ul>
       </div>
     );
   }
