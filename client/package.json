@@ -2,12 +2,7 @@
   "name": "cms",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/api": {
-      "target": "https://localhost:3001",
-      "secure": false
-    }
-  },
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
