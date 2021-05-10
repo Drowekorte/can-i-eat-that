@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 // import CreatePostForm from "../components/CreatePostForm";
 import SearchRecipesForm from "../components/SearchRecipesForm";
 import RecipeList from "../components/RecipeList";
-require ("dotenv").config();
+require("dotenv").config();
 
 const Home = (props) => {
   console.log(props);
@@ -29,6 +29,12 @@ const Home = (props) => {
       currentPagination = 0;
       setPagination(0);
     }
+
+    // //Attempt to fix the CORS error when we don't use CORS
+    // app.use((req, res, next) => {
+    //   res.header("Access-Control-Allow-Origin", "*");
+    //   next();
+    // });
 
     const getRecipes = async () => {
       // fetch

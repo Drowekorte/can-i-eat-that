@@ -33,10 +33,7 @@ export default function Login({ setToken }) {
         <div>
           <label>
             <p>Email</p>
-            <input
-              type="text"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <input type="text" onChange={(e) => setEmail(e.target.value)} />
           </label>
         </div>
         <div>

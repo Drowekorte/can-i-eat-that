@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
@@ -28,12 +28,12 @@ function App() {
           Accept: "application/json",
         },
       });
-console.log("response: ", response)
+      console.log("response: ", response);
       const content = await response.json();
-console.log("content: ", content)
+      console.log("content: ", content);
       setName(content.name);
     })();
-  },[]);
+  }, []);
 
   function Login() {
     const loginWithGoogle = () => {
@@ -51,31 +51,31 @@ console.log("content: ", content)
     );
   }
 
-return (
-  <Router>
-    <div className="App">
-      <StoreProvider>
-        <Nav name={name} />
-      <header className="App-header">
-          <Logout />
-        </header>
-        <section>{user ? <></> : <Login />}</section>
-        <Switch>
-          <Route exact path="/" component={() => <Home name={name} />} />
-          <Route exact path="/home" component={Home} />
+  return (
+    <Router>
+      <div className="App">
+        <StoreProvider>
+          <Nav name={name} />
+          <header className="App-header">
+            <Logout />
+          </header>
+          <section>{user ? <></> : <Login />}</section>
+          <Switch>
+            <Route exact path="/" component={() => <Home name={name} />} />
+            <Route exact path="/home" component={Home} />
 
-          <Route exact path="/recipes/:id" component={Detail} />
+            <Route exact path="/recipes/:id" component={Detail} />
 
-          <PrivateRoute exact path="/preferences" component={Preferences} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/favorites" component={FavoritesList} />
-          <Route exact path="/login-signup" component={LoginSignup} />
-          <Route component={NoMatch} />
-        </Switch>
-      </StoreProvider>
-    </div>
-  </Router>
-);
+            <PrivateRoute exact path="/preferences" component={Preferences} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/favorites" component={FavoritesList} />
+            <Route exact path="/login-signup" component={LoginSignup} />
+            <Route component={NoMatch} />
+          </Switch>
+        </StoreProvider>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
