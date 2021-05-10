@@ -13,7 +13,7 @@ const Detail = props => {
     API.getRecipe(props.match.params.id)
       .then(res => dispatch({ type: SET_CURRENT_RECIPES, recipe: res.data }))
       .catch(err => console.log(err));
-  }, []);
+  },[]);
 
   const addFavorite = () => {
     dispatch({

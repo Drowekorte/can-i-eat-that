@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Detail from "./pages/Detail";
+// import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
-import FavoritesList from "./pages/FavoritesList";
+// import FavoritesList from "./pages/FavoritesList";
 import Dashboard from "./components/Dashboard";
 import Preferences from "./components/Preferences";
 import LoginSignup from "./pages/LoginSignup";
@@ -64,11 +64,11 @@ function App() {
             <Route exact path="/" component={() => <Home name={name} />} />
             <Route exact path="/home" component={Home} />
 
-            <Route exact path="/recipes/:id" component={Detail} />
+            {/* <Route exact path="/recipes/:id" component={Detail} /> */}
 
             <PrivateRoute exact path="/preferences" component={Preferences} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/favorites" component={FavoritesList} />
+            {/* <PrivateRoute exact path="/favorites" component={FavoritesList} /> */}
             <Route exact path="/login-signup" component={LoginSignup} />
             <Route component={NoMatch} />
           </Switch>

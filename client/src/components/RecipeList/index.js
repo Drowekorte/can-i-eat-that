@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { ListItem, List } from "../List";
+import React from "react";
+// import { ListItem, List } from "../List";
 // import DeleteBtn from "../DeleteBtn";
 import { Link } from "react-router-dom";
 
